@@ -43,15 +43,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NovaGame",
+              "Title": "NovaGame.csproj",
               "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\NovaGame.csproj",
               "RelativeDocumentMoniker": "NovaGame.csproj",
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\NovaGame.csproj",
               "RelativeToolTip": "NovaGame.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-02T21:58:28.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T21:58:28.279Z"
             },
             {
               "$type": "Document",
@@ -62,8 +61,7 @@
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\NovaGame.csproj",
               "RelativeToolTip": "NovaGame.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-02T21:57:44.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T21:57:44.386Z"
             },
             {
               "$type": "Document",
@@ -73,7 +71,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAmwK4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T21:43:42.894Z",
               "EditorCaption": ""
