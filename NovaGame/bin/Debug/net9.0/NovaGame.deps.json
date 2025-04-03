@@ -8,12 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "NovaGame/1.0.0": {
         "dependencies": {
-          "Sayers.SDL2.Core": "1.0.11",
-          "sdl2.nuget": "2.30.9",
-          "sdl2_image.nuget": "2.8.2",
-          "sdl2_mixer.nuget": "2.8.0",
-          "sdl2_net.nuget": "2.2.0",
-          "sdl2_ttf.nuget": "2.22.0"
+          "Sayers.SDL2.Core": "1.0.11"
         },
         "runtime": {
           "NovaGame.dll": {}
@@ -26,41 +21,7 @@
             "fileVersion": "1.0.11.0"
           }
         }
-      },
-      "sdl2.nuget/2.30.9": {
-        "dependencies": {
-          "sdl2.nuget.redist": "2.30.9"
-        }
-      },
-      "sdl2.nuget.redist/2.30.9": {},
-      "sdl2_image.nuget/2.8.2": {
-        "dependencies": {
-          "sdl2.nuget": "2.30.9",
-          "sdl2_image.nuget.redist": "2.8.2"
-        }
-      },
-      "sdl2_image.nuget.redist/2.8.2": {},
-      "sdl2_mixer.nuget/2.8.0": {
-        "dependencies": {
-          "sdl2.nuget": "2.30.9",
-          "sdl2_mixer.nuget.redist": "2.8.0"
-        }
-      },
-      "sdl2_mixer.nuget.redist/2.8.0": {},
-      "sdl2_net.nuget/2.2.0": {
-        "dependencies": {
-          "sdl2.nuget": "2.30.9",
-          "sdl2_net.nuget.redist": "2.2.0"
-        }
-      },
-      "sdl2_net.nuget.redist/2.2.0": {},
-      "sdl2_ttf.nuget/2.22.0": {
-        "dependencies": {
-          "sdl2.nuget": "2.30.9",
-          "sdl2_ttf.nuget.redist": "2.22.0"
-        }
-      },
-      "sdl2_ttf.nuget.redist/2.22.0": {}
+      }
     }
   },
   "libraries": {
@@ -75,76 +36,6 @@
       "sha512": "sha512-K/guGaUyRdMhL2FLlUYbqJmKF3h2KtOV7l90NJfLOt/M64zLb4fkWlDGjXCZdHSZGPKsyOjps6FdsambXiLJQQ==",
       "path": "sayers.sdl2.core/1.0.11",
       "hashPath": "sayers.sdl2.core.1.0.11.nupkg.sha512"
-    },
-    "sdl2.nuget/2.30.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-lzcS+4QjGdJHLs+X79qt34IPRkPJGJXldLyFcZlNOJPiErtkEJXs7EptER92wImyOVnay5F+cmPoKDIv7ofHEg==",
-      "path": "sdl2.nuget/2.30.9",
-      "hashPath": "sdl2.nuget.2.30.9.nupkg.sha512"
-    },
-    "sdl2.nuget.redist/2.30.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IL8Ep5vivSNQdOTbe4UqGB+oXoEFC0Ig4TR+MR0TCLZ/fKs5d3E7Qt4qskAQBm1icL2pIcCKnhYONfrBs5iwzQ==",
-      "path": "sdl2.nuget.redist/2.30.9",
-      "hashPath": "sdl2.nuget.redist.2.30.9.nupkg.sha512"
-    },
-    "sdl2_image.nuget/2.8.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zFks55IfHNj0XuWEhytRaF9vXv7QFNEfk4US1im9cFpPM5ewL9hyqaG5klMhwODEZkr6ruwNbT8H/0GUB4mE0g==",
-      "path": "sdl2_image.nuget/2.8.2",
-      "hashPath": "sdl2_image.nuget.2.8.2.nupkg.sha512"
-    },
-    "sdl2_image.nuget.redist/2.8.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Jl6MTsltBNyFCP9XOug0B66xGrZ0dmWOZTTUbtLlP66b7zKMpaOUcAzfz2WbICHVZuF38CJSyj40Ds2mfzSTJg==",
-      "path": "sdl2_image.nuget.redist/2.8.2",
-      "hashPath": "sdl2_image.nuget.redist.2.8.2.nupkg.sha512"
-    },
-    "sdl2_mixer.nuget/2.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-CibWN6mlbVPjhWxZvWY1CGQuxn/AvTz0yN/cG4C7Q7KmGkD64gACylsxTNgbEpnHEFc/hioPovIAPbXS/SZaug==",
-      "path": "sdl2_mixer.nuget/2.8.0",
-      "hashPath": "sdl2_mixer.nuget.2.8.0.nupkg.sha512"
-    },
-    "sdl2_mixer.nuget.redist/2.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-trFTAeW2OCBrt322Wow8zfzc2k9ksyUYyGcZIGiUqtEI42N2bjecmBTuwlDmqAmdkx4uZlCPnyr9Xwo0eTVUrw==",
-      "path": "sdl2_mixer.nuget.redist/2.8.0",
-      "hashPath": "sdl2_mixer.nuget.redist.2.8.0.nupkg.sha512"
-    },
-    "sdl2_net.nuget/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zPbWMQvaHp7Vm48z14PsPXuf3EVXz9U0qRjzc75ogcJFdrDRraKpkqYgG/u+hZ4CeZ1mgL7YQAekWGg6KjBMCw==",
-      "path": "sdl2_net.nuget/2.2.0",
-      "hashPath": "sdl2_net.nuget.2.2.0.nupkg.sha512"
-    },
-    "sdl2_net.nuget.redist/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-r//WNeJeUMogC59pvZ27cyPwbwTlR3SxkPS0ZA3DFEigUY62z3xHuY29XvS4s9kJqx3NBzDMe6GToqTViRIwDw==",
-      "path": "sdl2_net.nuget.redist/2.2.0",
-      "hashPath": "sdl2_net.nuget.redist.2.2.0.nupkg.sha512"
-    },
-    "sdl2_ttf.nuget/2.22.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zTwbvHTsKQsqLMahXWmaYp1OEFEPejVlMzli2oE/CpsO+6JDMnTIEw41SRkt6uTw7Jdk75VKmM2f3hcpSJz63A==",
-      "path": "sdl2_ttf.nuget/2.22.0",
-      "hashPath": "sdl2_ttf.nuget.2.22.0.nupkg.sha512"
-    },
-    "sdl2_ttf.nuget.redist/2.22.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Gc1cZ3o1UYXbJeZ4x8/f1I4KjkR3EGT+VMRD3Fg5oIL+u5bVRVCmNUxzbKkEJ/dpI6QKUhPQK3CkYv0HraeYZw==",
-      "path": "sdl2_ttf.nuget.redist/2.22.0",
-      "hashPath": "sdl2_ttf.nuget.redist.2.22.0.nupkg.sha512"
     }
   }
 }

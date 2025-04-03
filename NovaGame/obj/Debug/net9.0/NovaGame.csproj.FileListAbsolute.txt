@@ -31,3 +31,4 @@ C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\obj\Debug\net9.0\refint\NovaG
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\obj\Debug\net9.0\NovaGame.pdb
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\obj\Debug\net9.0\NovaGame.genruntimeconfig.cache
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\obj\Debug\net9.0\ref\NovaGame.dll
+C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\obj\Debug\net9.0\NovaGame.sourcelink.json
