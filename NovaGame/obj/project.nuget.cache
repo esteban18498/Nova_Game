@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cWBOGHNTGHM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\NovaGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\esteb\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
