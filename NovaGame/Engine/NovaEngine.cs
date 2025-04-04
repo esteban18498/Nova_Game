@@ -10,10 +10,17 @@ namespace NovaGame.Engine
     public class NovaEngine
     {
         static IntPtr window;
+        static int _width, _height;
+        public static int ScreenWidth => _width;
+        public static int ScreeHeight => _height;
+
         static IntPtr glContext;
 
-        public static void Init()
+        public static void Init(int width=800,int height=600)
         {
+            _width = width;
+            _height = height;
+
             // Initialize SDL with OpenGL
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)
             {
@@ -33,7 +40,7 @@ namespace NovaGame.Engine
             SDL.SDL_GL_SetAttribute(SDL.SDL_GLattr.SDL_GL_CONTEXT_PROFILE_MASK, (int)SDL.SDL_GLprofile.SDL_GL_CONTEXT_PROFILE_CORE);
 
             // Create window with OpenGL
-            window = SDL.SDL_CreateWindow("NovaGame", 100, 100, 800, 600,
+            window = SDL.SDL_CreateWindow("NovaGame", 100, 100, _width, _height,
                 SDL.SDL_WindowFlags.SDL_WINDOW_OPENGL | SDL.SDL_WindowFlags.SDL_WINDOW_RESIZABLE);
 
             if (window == IntPtr.Zero)
@@ -51,10 +58,12 @@ namespace NovaGame.Engine
             // Load OpenGL functions
             LoadOpenGLFunctions();
 
+
             // Configure OpenGL
             NovaGL.glClearColor(0.1f, 0.2f, 0.3f, 1.0f);
             NovaGL.glEnable(NovaGL.GL_BLEND);
             NovaGL.glBlendFunc(NovaGL.GL_SRC_ALPHA, NovaGL.GL_ONE_MINUS_SRC_ALPHA);
+            NovaGL.CompileShaders();
 
         }
 

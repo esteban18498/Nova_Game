@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using NovaGame.Engine.Shaders;
 
 namespace NovaGame.Engine
 {
@@ -35,6 +36,8 @@ namespace NovaGame.Engine
         public const uint GL_TRIANGLES = 0x0004;
         public const uint GL_UNSIGNED_INT = 0x1405;
         public const uint GL_TEXTURE0 = 0x84C0;
+
+#nullable disable
 
         // Delegates
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -222,6 +225,8 @@ namespace NovaGame.Engine
         private static glUniform1iDelegate _glUniform1i;
         public static void glUniform1i(int location, int value) => _glUniform1i(location, value);
 
+#nullable restore
+
         public static void LoadFunctionPointers(Func<string, IntPtr> getProcAddress)
         {
             _glClearColor = Marshal.GetDelegateForFunctionPointer<glClearColorDelegate>(getProcAddress("glClearColor"));
@@ -261,6 +266,17 @@ namespace NovaGame.Engine
             _glActiveTexture = Marshal.GetDelegateForFunctionPointer<glActiveTextureDelegate>(getProcAddress("glActiveTexture"));
             _glGetUniformLocation = Marshal.GetDelegateForFunctionPointer<glGetUniformLocationDelegate>(getProcAddress("glGetUniformLocation"));
             _glUniform1i = Marshal.GetDelegateForFunctionPointer<glUniform1iDelegate>(getProcAddress("glUniform1i"));
+        }
+
+
+        //Shaders
+#nullable disable
+        private static SpriteShader _spriteShader;
+        public static SpriteShader SpriteShader=>_spriteShader;
+#nullable enable
+        internal static void CompileShaders()
+        {
+            _spriteShader=new SpriteShader();
         }
     }
 }
