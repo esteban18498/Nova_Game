@@ -274,9 +274,15 @@ namespace NovaGame.Engine
         private static SpriteShader _spriteShader;
         public static SpriteShader SpriteShader=>_spriteShader;
 #nullable enable
-        internal static void CompileShaders()
+        public static void CompileShaders()
         {
             _spriteShader=new SpriteShader();
         }
+
+        public static void CleanShaders()
+        {
+            _spriteShader.DeleteShaderProgram();
+        }
     }
+
 }

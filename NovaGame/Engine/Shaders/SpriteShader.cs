@@ -90,5 +90,10 @@ namespace NovaGame.Engine.Shaders
             return shaderProgram;
         }
 
+        public void DeleteShaderProgram()
+        {
+            NovaGL.glDeleteProgram(shaderProgram);
+        }
+
     }
 }

@@ -89,6 +89,7 @@ namespace NovaGame.Engine
 
         public static void Clean()
         {
+            NovaGL.CleanShaders();
             SDL.SDL_GL_DeleteContext(glContext);
             SDL.SDL_DestroyWindow(window);
             SDL_image.IMG_Quit();

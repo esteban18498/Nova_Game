@@ -19,9 +19,7 @@ namespace NovaGame.Engine
         public SpriteRenderer(string spritePath)
         {
             textureID = LoadTexture(spritePath);
-
-
-            // Create a simple shader program
+            // get a simple shader program
             shaderProgram = NovaGL.SpriteShader.shaderProgram;
         }
 
@@ -47,7 +45,6 @@ namespace NovaGame.Engine
             NovaGL.glDeleteVertexArrays(1, ref VAO);
             NovaGL.glDeleteBuffers(1, ref VBO);
             NovaGL.glDeleteBuffers(1, ref EBO);
-            NovaGL.glDeleteProgram(shaderProgram);
             NovaGL.glDeleteTextures(1, ref textureID);
         }
 
@@ -75,7 +72,7 @@ namespace NovaGame.Engine
 
             // Determine OpenGL format
             uint glFormat = NovaGL.GL_RGB;
-            if (format == 376840196)// SDL_PIXELFORMAT_RGBA32??
+            if (format == 376840196)// SDL_PIXELFORMAT_RGBA32?? cambiar por equivalente en EXA
                 glFormat = NovaGL.GL_RGBA;
             else if (format == SDL.SDL_PIXELFORMAT_RGB24)
                 glFormat = NovaGL.GL_RGB;
