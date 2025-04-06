@@ -225,6 +225,16 @@ namespace NovaGame.Engine
         private static glUniform1iDelegate _glUniform1i;
         public static void glUniform1i(int location, int value) => _glUniform1i(location, value);
 
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        private delegate void glUniform1fDelegate(int location, float value);
+        private static glUniform1fDelegate _glUniform1f;
+        public static void glUniform1f(int location, float value) => _glUniform1f(location, value);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        private delegate void glUniform2fvDelegate(int location, int count, float[] value);
+        private static glUniform2fvDelegate _glUniform2fv;
+        public static void glUniform2fv(int location, int count, float[] value) => _glUniform2fv(location, count, value);
+
 #nullable restore
 
         public static void LoadFunctionPointers(Func<string, IntPtr> getProcAddress)
@@ -266,6 +276,8 @@ namespace NovaGame.Engine
             _glActiveTexture = Marshal.GetDelegateForFunctionPointer<glActiveTextureDelegate>(getProcAddress("glActiveTexture"));
             _glGetUniformLocation = Marshal.GetDelegateForFunctionPointer<glGetUniformLocationDelegate>(getProcAddress("glGetUniformLocation"));
             _glUniform1i = Marshal.GetDelegateForFunctionPointer<glUniform1iDelegate>(getProcAddress("glUniform1i"));
+            _glUniform1f = Marshal.GetDelegateForFunctionPointer<glUniform1fDelegate>(getProcAddress("glUniform1f"));
+            _glUniform2fv = Marshal.GetDelegateForFunctionPointer<glUniform2fvDelegate>(getProcAddress("glUniform2fv"));
         }
 
 

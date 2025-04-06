@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using NovaGame.Engine;
+using NovaGame.Engine.Components;
 using SDL2;
 
 namespace NovaGame
@@ -8,12 +9,15 @@ namespace NovaGame
     class Program
     {
         static SpriteRenderer sprite;
+        static Transform transform;
 
         static void Main()
         {
             NovaEngine.Init();
 
-            sprite = new SpriteRenderer("assets/player.png");
+            
+            transform = new Transform(0.5f, 0.5f);
+            sprite = new SpriteRenderer("assets/player.png", transform);
             
 
 
@@ -28,6 +32,8 @@ namespace NovaGame
                         running = false;
                 }
 
+
+                transform.Rotate(0.01f);
                 // Clear Frame
                 NovaEngine.Clear();
 
