@@ -37,9 +37,30 @@ namespace NovaGame.Engine
         public const uint GL_UNSIGNED_INT = 0x1405;
         public const uint GL_TEXTURE0 = 0x84C0;
 
+        public const uint GL_VERSION = 0x1F02;
+        public const uint GL_MAJOR_VERSION = 0x821B;
+        public const uint GL_MINOR_VERSION = 0x821C;
+        public const uint GL_VENDOR = 0x1F00;
+        public const uint GL_RENDERER = 0x1F01;
+        public const uint GL_SHADING_LANGUAGE_VERSION = 0x8B8C;
 #nullable disable
 
         // Delegates
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        private delegate IntPtr glGetStringDelegate(uint name);
+        private static glGetStringDelegate _glGetString;
+        public static string glGetString(uint name)
+        {
+            IntPtr ptr = _glGetString(name);
+            return Marshal.PtrToStringAnsi(ptr);
+        }
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        private delegate void glGetIntegervDelegate(uint pname, out int data);
+        private static glGetIntegervDelegate _glGetIntegerv;
+        public static void glGetIntegerv(uint pname, out int data) => _glGetIntegerv(pname, out data);
+
+
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         private delegate void glClearColorDelegate(float r, float g, float b, float a);
         private static glClearColorDelegate _glClearColor;
@@ -278,8 +299,30 @@ namespace NovaGame.Engine
             _glUniform1i = Marshal.GetDelegateForFunctionPointer<glUniform1iDelegate>(getProcAddress("glUniform1i"));
             _glUniform1f = Marshal.GetDelegateForFunctionPointer<glUniform1fDelegate>(getProcAddress("glUniform1f"));
             _glUniform2fv = Marshal.GetDelegateForFunctionPointer<glUniform2fvDelegate>(getProcAddress("glUniform2fv"));
+            _glGetString = Marshal.GetDelegateForFunctionPointer<glGetStringDelegate>(getProcAddress("glGetString"));
+            _glGetIntegerv = Marshal.GetDelegateForFunctionPointer<glGetIntegervDelegate>(getProcAddress("glGetIntegerv"));
         }
 
+
+        public static void CheckOpenGLVersion()
+        {
+            string vendor = glGetString(GL_VENDOR);
+            string renderer = glGetString(GL_RENDERER);
+            string version = glGetString(GL_VERSION);
+            string glslVersion = glGetString(GL_SHADING_LANGUAGE_VERSION);
+
+            Console.WriteLine($"GPU: {vendor} {renderer}");
+            Console.WriteLine($"OpenGL: {version}");
+            Console.WriteLine($"GLSL: {glslVersion}");
+
+            glGetIntegerv(GL_MAJOR_VERSION, out int major);
+            glGetIntegerv(GL_MINOR_VERSION, out int minor);
+
+            if (major < 3 || (major == 3 && minor < 3))
+            {
+                throw new Exception($"Unsupported OpenGL version {major}.{minor}. Need at least 3.3");
+            }
+        }
 
         //Shaders
 #nullable disable
