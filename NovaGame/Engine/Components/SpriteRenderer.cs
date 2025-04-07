@@ -45,6 +45,7 @@ namespace NovaGame.Engine.Components
             shader.SetRotation(transform.Rotation);
             shader.SetPosition(transform.Position.X, transform.Position.Y);
             shader.SetScale(1.0f, 1.0f); // Default scale
+            shader.SetViewportSize(NovaEngine.ScreenWidth, NovaEngine.ScreeHeight);
             shader.SetTexture(0); // Texture unit 0
 
             NovaGL.glActiveTexture(NovaGL.GL_TEXTURE0);
@@ -117,8 +118,8 @@ namespace NovaGame.Engine.Components
         {
             // Calculate aspect-correct quad dimensions
             float imageAspect = (float)imageWidth / imageHeight;
-            quadWidth = (float)imageWidth/NovaEngine.ScreenWidth;  
-            quadHeight = (float)imageHeight / NovaEngine.ScreeHeight;
+            quadWidth = (float)imageWidth;  
+            quadHeight = (float)imageHeight;
 
             float[] vertices = {
         // Positions        // Texture coords
