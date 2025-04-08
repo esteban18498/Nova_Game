@@ -13,7 +13,7 @@ namespace NovaGame
 
         static void Main()
         {
-            NovaEngine.Init();
+            NovaEngine.Init(1600,900);
 
             
             transform = new Transform(0.5f, 0.5f);
