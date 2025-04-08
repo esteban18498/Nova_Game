@@ -32,8 +32,9 @@ namespace NovaGame
                         running = false;
                 }
 
+                NovaEngine.Update();
 
-                transform.Rotate(0.01f);
+                transform.Rotate(1*Time.DeltaTime);
                 // Clear Frame
                 NovaEngine.Clear();
 

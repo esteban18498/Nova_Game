@@ -21,6 +21,10 @@ namespace NovaGame.Engine
             _width = width;
             _height = height;
 
+
+            // Initialize Time
+            Time.Init();
+
             // Initialize SDL with OpenGL
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)
             {
@@ -58,7 +62,7 @@ namespace NovaGame.Engine
             // Load OpenGL functions
             LoadOpenGLFunctions();
 
-            //NovaGL.CheckOpenGLVersion();
+            NovaGL.CheckOpenGLVersion();
 
 
             // Configure OpenGL
@@ -82,7 +86,7 @@ namespace NovaGame.Engine
 
         public static void Update()
         {
-
+            Time.UpdateTime();
         }
         public static void Show()
         {
