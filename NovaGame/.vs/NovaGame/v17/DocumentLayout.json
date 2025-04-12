@@ -45,7 +45,7 @@
       "VerticalTabListWidth": 591,
       "DocumentGroups": [
         {
-          "DockedWidth": 172,
+          "DockedWidth": 384,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "Engine\\Shaders\\SpriteShader.cs",
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader.cs",
               "RelativeToolTip": "Engine\\Shaders\\SpriteShader.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCcAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCcAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T07:34:52.013Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "PlayerController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T06:42:51.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T06:42:51.398Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Engine\\Components\\Transform.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T02:26:33.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T02:26:33.154Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Engine\\NovaEngine.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAwwGEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T22:10:54.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T22:10:54.129Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Engine\\NovaGL.cs",
               "ViewState": "AgIAADMBAAAAAAAAAAAmwEgBAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T22:07:06.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T22:07:06.456Z"
             },
             {
               "$type": "Document",
@@ -123,13 +119,12 @@
               "RelativeToolTip": "Engine\\Components\\SpriteRenderer.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T22:02:35.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T22:02:35.791Z"
             }
           ]
         },
         {
-          "DockedWidth": 222,
+          "DockedWidth": 10,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -140,7 +135,7 @@
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T02:19:21.75Z",
               "EditorCaption": ""
@@ -155,8 +150,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAmwBcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T21:59:26.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T21:59:26.029Z"
             },
             {
               "$type": "Document",
@@ -168,8 +162,7 @@
               "RelativeToolTip": "Engine\\Time.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAqwBYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T22:06:53.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T22:06:53.286Z"
             }
           ]
         }
