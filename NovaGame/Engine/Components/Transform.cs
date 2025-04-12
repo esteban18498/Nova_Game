@@ -75,5 +75,34 @@ namespace NovaGame.Engine.Components
             this.position += new Vector2(position.X, position.Y);
         }
 
+        public void MoveUp(float distance)
+        {
+            float deltaX = -MathF.Sin(rotation) * distance;
+            float deltaY = MathF.Cos(rotation) * distance;
+            position += new Vector2(deltaX, deltaY);
+        }
+
+        public void MoveDown(float distance)
+        {  
+            float deltaX = MathF.Sin(rotation) * distance;
+            float deltaY = -MathF.Cos(rotation) * distance;
+
+            position += new Vector2(deltaX, deltaY);
+        }
+
+        public void MoveRight(float distance)
+        {
+            float deltaX = MathF.Cos(rotation) * distance;
+            float deltaY = MathF.Sin(rotation) * distance;
+
+            position += new Vector2(deltaX, deltaY);
+        }
+
+        public void MoveLeft(float distance) 
+            {   
+                float deltaX = -MathF.Cos(rotation) * distance;
+                float deltaY = -MathF.Sin(rotation) * distance;
+                position += new Vector2(deltaX, deltaY);
+            }
     }
 }

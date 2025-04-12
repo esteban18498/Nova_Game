@@ -25,19 +25,27 @@ namespace NovaGame
             // Check for key presses and update the transform accordingly
             if (NovaEngine.IsKeyPressed(NovaEngine.KEY_UP))
             {
-                transform.Move( new Vector2(0, 1) * Time.DeltaTime* player.Speed);
+                transform.MoveUp( Time.DeltaTime* player.Speed);
             }
             if (NovaEngine.IsKeyPressed(NovaEngine.KEY_DOWN))
             {
-                transform.Move(new Vector2(0, -1) * Time.DeltaTime * player.Speed);
+                transform.MoveDown(Time.DeltaTime * player.Speed);
             }
             if (NovaEngine.IsKeyPressed(NovaEngine.KEY_LEFT))
             {
-                transform.Move(new Vector2(-1, 0) * Time.DeltaTime * player.Speed);
+                transform.MoveLeft(Time.DeltaTime * player.Speed);
             }
             if (NovaEngine.IsKeyPressed(NovaEngine.KEY_RIGHT))
             {
-                transform.Move(new Vector2(1, 0) * Time.DeltaTime * player.Speed);
+                transform.MoveRight(Time.DeltaTime * player.Speed);
+            }
+            if (NovaEngine.IsKeyPressed(NovaEngine.KEY_Q))
+            {
+                transform.Rotate(Time.DeltaTime * player.RotationSpeed);
+            }
+            if (NovaEngine.IsKeyPressed(NovaEngine.KEY_E))
+            {
+                transform.Rotate(Time.DeltaTime * -player.RotationSpeed);
             }
         }
     }

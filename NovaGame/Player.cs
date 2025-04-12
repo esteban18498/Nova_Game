@@ -23,6 +23,13 @@ namespace NovaGame
             //set { _speed = value; }
         }
 
+        private float _rotationSpeed = 1;
+        public float RotationSpeed
+        {
+            get { return _rotationSpeed; }
+            //set { _rotationSpeed = value; }
+        }
+
         public Player()
         {
             transform = new Transform();
