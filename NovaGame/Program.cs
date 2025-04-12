@@ -9,6 +9,7 @@ namespace NovaGame
     class Program
     {
         static Player player;
+        static bool running = true;
 
         static void Main()
         {
@@ -19,19 +20,21 @@ namespace NovaGame
 
 
             // Main loop
-            bool running = true;
+
             while (running)
-            {
-                while (SDL.SDL_PollEvent(out SDL.SDL_Event e) != 0)
+            {   
+                running = NovaEngine.ManageEvents();
+
+                NovaEngine.Update();
+
+                // Ejemplo: Comprobar si una tecla está presionada
+                if (NovaEngine.IsKeyPressed(NovaEngine.KEY_W))
                 {
-                    if (e.type == SDL.SDL_EventType.SDL_QUIT)
-                        running = false;
+                    Console.WriteLine("Tecla W presionada");
                 }
 
 
-                NovaEngine.Update();
                 player.Update();
-
 
                 // Clear Frame
                 NovaEngine.Clear();
