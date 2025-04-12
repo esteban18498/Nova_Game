@@ -37,7 +37,7 @@ public class SpriteShader : IDisposable
             "    // Convert to OpenGL normalized coordinates (-1 to 1)\n" +
             "    vec2 normalizedPos;\n" +
             "    normalizedPos.x = (pixelPos.x / uViewportSize.x) * 2.0;\n" +  // -1 to 1 (left to right)
-            "    normalizedPos.y = -(pixelPos.y / uViewportSize.y) * 2.0;\n" + // 1 to -1 (top to bottom) (flipped for y-up)\n" +
+            "    normalizedPos.y = (pixelPos.y / uViewportSize.y) * 2.0;\n" + // 1 to -1 (top to bottom) \n" +
             "    \n" +
             "    gl_Position = vec4(normalizedPos, 0.0, 1.0);\n" +
             "    TexCoord = aTexCoord;\n" +
