@@ -8,17 +8,13 @@ namespace NovaGame
 {
     class Program
     {
-        static SpriteRenderer sprite;
-        static Transform transform;
+        static Player player;
 
         static void Main()
         {
             NovaEngine.Init(1600,900);
 
-            
-            transform = new Transform(0.5f, 0.5f);
-            sprite = new SpriteRenderer("assets/player.png", transform);
-            
+            player = new Player();
 
 
 
@@ -32,23 +28,25 @@ namespace NovaGame
                         running = false;
                 }
 
-                NovaEngine.Update();
 
-                transform.Rotate(1*Time.DeltaTime);
+                NovaEngine.Update();
+                player.Update();
+
+
                 // Clear Frame
                 NovaEngine.Clear();
-
-
-                // Update ?
-                sprite.Render();
+                
+                // Render
+                player.Render();
                 
 
                 // Swap/Show Frame
                 NovaEngine.Show();
             }
 
-            sprite.Clean();
 
+            // Clean up
+            player.Clean();
             NovaEngine.Clean();
 
         }
