@@ -56,5 +56,24 @@ namespace NovaGame.Engine.Components
             this.rotation += rotation;
         }
 
+        public void SetPosition(float x, float y)
+        {
+            position = new Vector2(x, y);
+        }
+
+        public void SetPosition(Vector2 position)
+        {
+            this.position = new Vector2(position.X, position.Y);
+        }
+
+        public void Move(float x, float y)
+        {
+            position += new Vector2(x, y);
+        }
+        public void Move(Vector2 position)
+        {
+            this.position += new Vector2(position.X, position.Y);
+        }
+
     }
 }
