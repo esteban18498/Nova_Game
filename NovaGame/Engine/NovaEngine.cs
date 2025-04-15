@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using SDL2;
@@ -88,11 +89,30 @@ namespace NovaGame.Engine
 
         // Diccionario para rastrear el estado de las teclas
         private static Dictionary<SDL.SDL_Keycode, bool> _keyStates = new();
-
         public static bool IsKeyPressed(SDL.SDL_Keycode key)
         {
             return _keyStates.ContainsKey(key) && _keyStates[key];
         }
+
+        private static Dictionary<MouseButton, bool> _mouseButtonStates = new();
+        private static Vector2 _mousePosition  = new Vector2(0, 0);
+        public static Vector2 GetMousePosition()
+        {
+            return _mousePosition;
+        }
+ 
+        public static Vector2 ScreenToWorld(Vector2 screenPoint)
+        {
+            Vector2 worldPoint = screenPoint - (new Vector2(_width, _height) / 2);
+            worldPoint.Y = -worldPoint.Y; // Invertir la coordenada Y
+            return worldPoint;
+        }
+
+        public static bool IsMouseButtonPressed(MouseButton button)
+        {
+            return _mouseButtonStates.ContainsKey(button) && _mouseButtonStates[button];
+        }
+      
 
         public static void HandleInput(SDL.SDL_Event e)
         {
@@ -105,6 +125,25 @@ namespace NovaGame.Engine
 
                 case SDL.SDL_EventType.SDL_KEYUP:
                     _keyStates[e.key.keysym.sym] = false;
+                    break;
+                case SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN:
+                    _mouseButtonStates[(MouseButton)e.button.button] = true;
+                    //Console.WriteLine($"Mouse button {e.button.button} pressed at ({e.button.x}, {e.button.y})");
+                    break;
+
+                case SDL.SDL_EventType.SDL_MOUSEBUTTONUP:
+                    _mouseButtonStates[(MouseButton)e.button.button] = false;
+                    //Console.WriteLine($"Mouse button {e.button.button} released at ({e.button.x}, {e.button.y})");
+                    break;
+
+                case SDL.SDL_EventType.SDL_MOUSEMOTION:
+                    _mousePosition = new Vector2(e.motion.x, e.motion.y);
+                    //Console.WriteLine($"Mouse moved to ({e.motion.x}, {e.motion.y})");
+                    break;
+
+                case SDL.SDL_EventType.SDL_MOUSEWHEEL:
+                    // Mouse wheel event
+                    //Console.WriteLine($"Mouse wheel scrolled: X={e.wheel.x}, Y={e.wheel.y}");
                     break;
             }
         }
@@ -184,14 +223,20 @@ namespace NovaGame.Engine
         public static SDL.SDL_Keycode KEY_RIGHT = SDL.SDL_Keycode.SDLK_RIGHT;
         public static SDL.SDL_Keycode KEY_LEFT = SDL.SDL_Keycode.SDLK_LEFT;
 
-        /*
-        public static SDL.SDL_Keycode MOUSE_LEFT = SDL.SDL_Keycode.SDL_BUTTON_LEFT;
-        public static SDL.SDL_Keycode MOUSE_RIGHT = SDL.SDL_Keycode.SDL_BUTTON_RIGHT;
 
-        public static SDL.SDL_Keycode MOUSE_WHEELDOWN = SDL.SDL_Keycode.SDL_BUTTON_WHEELDOWN;
-        public static SDL.SDL_Keycode MOUSE_WHEELUP = SDL.SDL_Keycode.SDL_BUTTON_WHEELUP;
-                
-        public static SDL.SDL_Keycode MOUSE_MIDDLE = SDL.SDL_Keycode.SDL_BUTTON_MIDDLE;
-        */
+        public enum MouseButton
+        {
+            LEFT = 1,
+            RIGHT = 2,
+            MIDDLE = 3
+        }
+        public class MouseCursor
+        {
+            // Diccionario para rastrear el estado de las teclas
+            
+        }
+
+        
+
     }
 }
