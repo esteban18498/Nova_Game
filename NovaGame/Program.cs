@@ -17,10 +17,7 @@ namespace NovaGame
 
             player = new Player();
 
-
-
             // Main loop
-
             while (running)
             {   
                 running = NovaEngine.ManageEvents();

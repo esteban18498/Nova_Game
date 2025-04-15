@@ -23,7 +23,7 @@ namespace NovaGame
             //set { _speed = value; }
         }
 
-        private float _rotationSpeed = 1;
+        private float _rotationSpeed = 2.5f;
         public float RotationSpeed
         {
             get { return _rotationSpeed; }
@@ -39,9 +39,7 @@ namespace NovaGame
 
         public void Update()
         {
-            // Update player position, rotation, etc.
             controller.Update();
-
         }
 
         public void Render()

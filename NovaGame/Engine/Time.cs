@@ -9,15 +9,12 @@ namespace NovaGame.Engine
 {
     public class Time
     {
-        private readonly static Time _instance = new Time();
-
-
         private static float _deltaTime;
         private static DateTime _startTime;
         private static float _lastFrameTime;
 
         public static float DeltaTime=>_deltaTime;
-        public static DateTime StartTime=> _startTime;
+        public static DateTime StartTime=>_startTime;
         public static float LastFrameTime=>_lastFrameTime;
 
         private Time()
@@ -37,13 +34,5 @@ namespace NovaGame.Engine
             _lastFrameTime = currentTime;
         }
 
-
-        public static Time Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
     }
 }

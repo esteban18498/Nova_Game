@@ -20,6 +20,7 @@ namespace NovaGame.Engine.Components
         public Transform()
         {
             position = new Vector2();
+            rotation = 0;
         }
 
         public Transform(float x, float y)
