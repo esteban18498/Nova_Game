@@ -15,10 +15,18 @@ namespace NovaGame.Engine.Components
     {
         private Transform transform;
 
-        uint textureID;
+        private uint textureID;
 
-        int width;
-        int height;
+        public void ModifiTextureID(uint textureID)
+        {
+            this.textureID = textureID;
+        }
+
+        private int _width;
+        private int _height;
+        
+        public int Width => _width;
+        public int Height => _height;
 
         uint VAO, VBO, EBO;
         float quadWidth, quadHeight;
@@ -74,10 +82,10 @@ namespace NovaGame.Engine.Components
 
             // Get surface info
             SDL.SDL_Surface sdlSurface = Marshal.PtrToStructure<SDL.SDL_Surface>(surface);
-            width = sdlSurface.w;
-            height = sdlSurface.h;
+            _width = sdlSurface.w;
+            _height = sdlSurface.h;
 
-            this.SetupRenderQuad(width, height);
+            this.SetupRenderQuad(_width, _height);
 
             IntPtr pixels = sdlSurface.pixels;
             SDL.SDL_PixelFormat surfaceFormat = Marshal.PtrToStructure<SDL.SDL_PixelFormat>(sdlSurface.format);
@@ -103,7 +111,7 @@ namespace NovaGame.Engine.Components
             NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MAG_FILTER, (int)NovaGL.GL_LINEAR);
 
             // Upload texture data
-            NovaGL.glTexImage2D(NovaGL.GL_TEXTURE_2D, 0, (int)glFormat, width, height, 0,
+            NovaGL.glTexImage2D(NovaGL.GL_TEXTURE_2D, 0, (int)glFormat, _width, _height, 0,
                           glFormat, NovaGL.GL_UNSIGNED_BYTE, pixels);
             NovaGL.glGenerateMipmap(NovaGL.GL_TEXTURE_2D);
 

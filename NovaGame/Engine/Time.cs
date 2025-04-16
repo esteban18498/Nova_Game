@@ -17,6 +17,8 @@ namespace NovaGame.Engine
         public static DateTime StartTime=>_startTime;
         public static float LastFrameTime=>_lastFrameTime;
 
+        public static float Now => (float)(DateTime.Now - _startTime).TotalSeconds;
+
         private Time()
         {
             Init();
@@ -29,7 +31,7 @@ namespace NovaGame.Engine
         }
         public static void UpdateTime()
         {
-            var currentTime = (float)(DateTime.Now - _startTime).TotalSeconds;
+            float currentTime = (float)(DateTime.Now - _startTime).TotalSeconds;
             _deltaTime = currentTime - _lastFrameTime;
             _lastFrameTime = currentTime;
         }

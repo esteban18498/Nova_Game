@@ -15,6 +15,7 @@ namespace NovaGame
         private PlayerController controller;
         private string spritePath = "assets/player.png";
         private SpriteRenderer sprite;
+        private AnimationController animationController;
 
         private float _speed=500;
         public float Speed
@@ -35,11 +36,13 @@ namespace NovaGame
             transform = new Transform();
             controller = new PlayerController(this , transform);
             sprite = new SpriteRenderer(spritePath, transform);
+            animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
         }
 
         public void Update()
         {
             controller.Update();
+            animationController.Update();
         }
 
         public void Render()
@@ -50,6 +53,7 @@ namespace NovaGame
         public void Clean()
         {
             sprite.Clean();
+            animationController.Clean();
         }
     }
 }
