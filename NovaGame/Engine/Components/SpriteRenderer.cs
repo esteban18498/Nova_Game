@@ -1,40 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using SDL2;
+using static SDL2.SDL;
+using NovaGame.Engine.Shaders;
 
-namespace NovaGame.Engine
+namespace NovaGame.Engine.Components
 {
     public class SpriteRenderer
     {
+        private Transform transform;
+
         uint textureID;
-        static int shaderProgram;
+
+        int width;
+        int height;
 
         uint VAO, VBO, EBO;
         float quadWidth, quadHeight;
 
-        public SpriteRenderer(string spritePath)
+
+        public SpriteRenderer(string spritePath, Transform transform)
         {
             textureID = LoadTexture(spritePath);
             // get a simple shader program
-            shaderProgram = NovaGL.SpriteShader.shaderProgram;
+            this.transform = transform;
         }
 
 
         public void Render()
         {
-            // Use ShaderProgram
-            NovaGL.glUseProgram(shaderProgram);
+            //this.SetupRenderQuad(width, height);
 
-            // Bind texture
+
+            // Use ShaderProgram
+            SpriteShader shader = NovaGL.SpriteShader;
+            shader.Use();
+
+            shader.Use();
+            shader.SetRotation(transform.Rotation );
+            shader.SetPosition(transform.Position.X, transform.Position.Y);
+            shader.SetScale(1.0f, 1.0f); // Default scale
+            shader.SetViewportSize(NovaEngine.ScreenWidth, NovaEngine.ScreeHeight);
+            shader.SetTexture(0); // Texture unit 0
+
             NovaGL.glActiveTexture(NovaGL.GL_TEXTURE0);
             NovaGL.glBindTexture(NovaGL.GL_TEXTURE_2D, textureID);
-            NovaGL.glUniform1i(NovaGL.glGetUniformLocation(shaderProgram, "texture1"), 0);
-
-            // Draw quad
             NovaGL.glBindVertexArray(VAO);
             NovaGL.glDrawElements(NovaGL.GL_TRIANGLES, 6, NovaGL.GL_UNSIGNED_INT, IntPtr.Zero);
 
@@ -60,8 +75,8 @@ namespace NovaGame.Engine
 
             // Get surface info
             SDL.SDL_Surface sdlSurface = Marshal.PtrToStructure<SDL.SDL_Surface>(surface);
-            int width = sdlSurface.w;
-            int height = sdlSurface.h;
+            width = sdlSurface.w;
+            height = sdlSurface.h;
 
             this.SetupRenderQuad(width, height);
 
@@ -103,8 +118,8 @@ namespace NovaGame.Engine
         {
             // Calculate aspect-correct quad dimensions
             float imageAspect = (float)imageWidth / imageHeight;
-            quadWidth = (float)imageWidth/NovaEngine.ScreenWidth;  
-            quadHeight = (float)imageHeight / NovaEngine.ScreeHeight;
+            quadWidth = (float)imageWidth;  
+            quadHeight = (float)imageHeight;
 
             float[] vertices = {
         // Positions        // Texture coords

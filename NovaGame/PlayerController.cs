@@ -57,7 +57,6 @@ namespace NovaGame
             Vector2 mousePos = NovaEngine.GetMousePosition();
             mousePos = NovaEngine.ScreenToWorld(mousePos);
 
-
             // Calcular la dirección hacia el mouse
             Vector2 direction = mousePos - transform.Position;
 

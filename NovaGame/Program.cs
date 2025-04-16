@@ -1,47 +1,52 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using NovaGame.Engine;
+using NovaGame.Engine.Components;
 using SDL2;
 
 namespace NovaGame
 {
     class Program
     {
-        static SpriteRenderer sprite;
+        static Player player;
+        static bool running = true;
 
         static void Main()
         {
-            NovaEngine.Init();
+            NovaEngine.Init(1600,900);
 
-            sprite = new SpriteRenderer("assets/player.png");
-            
-
-
+            player = new Player();
 
             // Main loop
-            bool running = true;
             while (running)
-            {
-                while (SDL.SDL_PollEvent(out SDL.SDL_Event e) != 0)
+            {   
+                running = NovaEngine.ManageEvents();
+
+                NovaEngine.Update();
+
+                // Ejemplo: Comprobar si una tecla está presionada
+                if (NovaEngine.IsKeyPressed(NovaEngine.KEY_W))
                 {
-                    if (e.type == SDL.SDL_EventType.SDL_QUIT)
-                        running = false;
+                    Console.WriteLine("Tecla W presionada");
                 }
+
+
+                player.Update();
 
                 // Clear Frame
                 NovaEngine.Clear();
-
-
-                // Update ?
-                sprite.Render();
+                
+                // Render
+                player.Render();
                 
 
                 // Swap/Show Frame
                 NovaEngine.Show();
             }
 
-            sprite.Clean();
 
+            // Clean up
+            player.Clean();
             NovaEngine.Clean();
 
         }
