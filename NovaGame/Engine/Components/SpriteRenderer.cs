@@ -26,9 +26,8 @@ namespace NovaGame.Engine.Components
 
         public SpriteRenderer(string spritePath, Transform transform)
         {
-            textureID = LoadTexture(spritePath);
-            // get a simple shader program
             this.transform = transform;
+            textureID = LoadTexture(spritePath);
         }
 
 
