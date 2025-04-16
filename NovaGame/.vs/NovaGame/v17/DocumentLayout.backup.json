@@ -11,6 +11,7 @@
       "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\shaders\\spriteshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\novagl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\novagl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,6 +22,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu864\\documents\\github\\nova_game\\novagame\\engine\\novamath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\novamath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu864\\documents\\github\\nova_game\\novagame\\engine\\components\\spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\components\\spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu864\\documents\\github\\nova_game\\novagame\\engine\\components\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\components\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu864\\documents\\github\\nova_game\\novagame\\engine\\novagl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\novagl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu864\\documents\\github\\nova_game\\novagame\\engine\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu864\\documents\\github\\nova_game\\novagame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu864\\documents\\github\\nova_game\\novagame\\engine\\novaengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\novaengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -29,12 +58,83 @@
       "VerticalTabListWidth": 145,
       "DocumentGroups": [
         {
+<<<<<<< Updated upstream
           "DockedWidth": 120,
+=======
+          "DockedWidth": 261,
+>>>>>>> Stashed changes
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< Updated upstream
+=======
+              "Title": "NovaMath.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\NovaMath.cs",
+              "RelativeDocumentMoniker": "Engine\\NovaMath.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\NovaMath.cs",
+              "RelativeToolTip": "Engine\\NovaMath.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T00:25:14.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T23:55:11.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Time.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Time.cs",
+              "RelativeDocumentMoniker": "Engine\\Time.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Time.cs",
+              "RelativeToolTip": "Engine\\Time.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T23:37:52.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpriteRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\SpriteRenderer.cs",
+              "RelativeDocumentMoniker": "Engine\\Components\\SpriteRenderer.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\SpriteRenderer.cs",
+              "RelativeToolTip": "Engine\\Components\\SpriteRenderer.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T22:48:51.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NovaEngine.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\NovaEngine.cs",
+              "RelativeDocumentMoniker": "Engine\\NovaEngine.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\NovaEngine.cs",
+              "RelativeToolTip": "Engine\\NovaEngine.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAiwGoAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T22:10:54.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+>>>>>>> Stashed changes
               "Title": "NovaGL.cs",
               "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\NovaGL.cs",
               "RelativeDocumentMoniker": "Engine\\NovaGL.cs",
@@ -42,6 +142,7 @@
               "RelativeToolTip": "Engine\\NovaGL.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAADwvycAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-04-03T18:58:43.77Z",
               "EditorCaption": ""
             },
@@ -56,23 +157,39 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T18:48:46.715Z",
+=======
+              "WhenOpened": "2025-04-08T22:07:06.456Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "DockedWidth": 280,
+=======
+          "DockedWidth": 256,
+>>>>>>> Stashed changes
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
+<<<<<<< Updated upstream
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+=======
+              "Title": "Transform.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\Transform.cs",
+              "RelativeDocumentMoniker": "Engine\\Components\\Transform.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\Transform.cs",
+              "RelativeToolTip": "Engine\\Components\\Transform.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAUwF0AAAANAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T21:43:42.894Z",
               "EditorCaption": ""
@@ -80,12 +197,21 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< Updated upstream
               "Title": "SpriteRenderer.cs",
               "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\SpriteRenderer.cs",
               "RelativeDocumentMoniker": "Engine\\SpriteRenderer.cs",
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\SpriteRenderer.cs",
               "RelativeToolTip": "Engine\\SpriteRenderer.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAIwE8AAAAlAAAAAAAAAA==",
+=======
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Player.cs",
+              "RelativeDocumentMoniker": "Player.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\Player.cs*",
+              "RelativeToolTip": "Player.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T13:17:28.928Z",
               "EditorCaption": ""
@@ -101,6 +227,19 @@
               "ViewState": "AgIAAB4AAAAAAAAAAAAowAwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T15:00:02.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\PlayerController.cs",
+              "RelativeDocumentMoniker": "PlayerController.cs",
+              "ToolTip": "C:\\Users\\alu864\\Documents\\GitHub\\Nova_Game\\NovaGame\\PlayerController.cs",
+              "RelativeToolTip": "PlayerController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T07:52:00.287Z",
               "EditorCaption": ""
             }
           ]
