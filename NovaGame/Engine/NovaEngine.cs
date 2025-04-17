@@ -10,14 +10,17 @@ namespace NovaGame.Engine
 {
     public class NovaEngine
     {
-        static IntPtr window;
+        static IntPtr _window;
+        public static IntPtr Window => _window;
         static int _width, _height;
         public static int ScreenWidth => _width;
         public static int ScreeHeight => _height;
 
         static IntPtr glContext;
 
-        public static void Init(int width = 800, int height = 600)
+        public static IntPtr NovaFont;
+
+        public static int Init(int width = 800, int height = 600)
         {
             _width = width;
             _height = height;
@@ -30,34 +33,52 @@ namespace NovaGame.Engine
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)
             {
                 Console.WriteLine("Error initializing SDL: " + SDL.SDL_GetError());
-                return;
-            }
+                return -1;
+            } 
 
             // Initialize SDL_image
             if (SDL_image.IMG_Init(SDL_image.IMG_InitFlags.IMG_INIT_PNG) == 0)
             {
                 Console.WriteLine("Error initializing SDL_image: " + SDL.SDL_GetError());
-                return;
+                return -1;
             }
+
+            //Initialize SDL_TTF
+            if (SDL_ttf.TTF_Init() == -1)
+            {
+                Console.WriteLine("Error initializing SDL_ttf: " + SDL.SDL_GetError());
+                return -1;
+            }
+
+            NovaFont = SDL_ttf.TTF_OpenFont("assets/Fonts/Arial.ttf", 24);
+            if(NovaFont == IntPtr.Zero)
+            {
+                Console.WriteLine("Error loading font: " + SDL.SDL_GetError());
+                return -1;
+            }
+            
+
+
+
             // Configure OpenGL attributes
             SDL.SDL_GL_SetAttribute(SDL.SDL_GLattr.SDL_GL_CONTEXT_MAJOR_VERSION, 3);
             SDL.SDL_GL_SetAttribute(SDL.SDL_GLattr.SDL_GL_CONTEXT_MINOR_VERSION, 3);
             SDL.SDL_GL_SetAttribute(SDL.SDL_GLattr.SDL_GL_CONTEXT_PROFILE_MASK, (int)SDL.SDL_GLprofile.SDL_GL_CONTEXT_PROFILE_CORE);
 
             // Create window with OpenGL
-            window = SDL.SDL_CreateWindow("NovaGame", 100, 100, _width, _height,
+            _window = SDL.SDL_CreateWindow("NovaGame", 100, 100, _width, _height,
                 SDL.SDL_WindowFlags.SDL_WINDOW_OPENGL | SDL.SDL_WindowFlags.SDL_WINDOW_RESIZABLE);
 
-            if (window == IntPtr.Zero)
+            if (_window == IntPtr.Zero)
             {
                 Console.WriteLine("Error creating window: " + SDL.SDL_GetError());
                 SDL.SDL_Quit();
-                return;
+                return -1;
             }
 
             // Create OpenGL context
-            glContext = SDL.SDL_GL_CreateContext(window);
-            SDL.SDL_GL_MakeCurrent(window, glContext);
+            glContext = SDL.SDL_GL_CreateContext(_window);
+            SDL.SDL_GL_MakeCurrent(_window, glContext);
             SDL.SDL_GL_SetSwapInterval(1); // Enable V-Sync
 
             // Load OpenGL functions
@@ -72,6 +93,7 @@ namespace NovaGame.Engine
             NovaGL.glBlendFunc(NovaGL.GL_SRC_ALPHA, NovaGL.GL_ONE_MINUS_SRC_ALPHA);
             NovaGL.CompileShaders();
 
+            return 0;
         }
 
         static void LoadOpenGLFunctions()
@@ -166,14 +188,14 @@ namespace NovaGame.Engine
         }
         public static void Show()
         {
-            SDL.SDL_GL_SwapWindow(window);
+            SDL.SDL_GL_SwapWindow(_window);
         }
 
         public static void Clean()
         {
             NovaGL.CleanShaders();
             SDL.SDL_GL_DeleteContext(glContext);
-            SDL.SDL_DestroyWindow(window);
+            SDL.SDL_DestroyWindow(_window);
             SDL_image.IMG_Quit();
             SDL.SDL_Quit();
         }

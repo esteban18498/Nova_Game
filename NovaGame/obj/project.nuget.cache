@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9rlqbgw6C34=",
+  "dgSpecHash": "cWBOGHNTGHM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\NovaGame.csproj",
+  "projectFilePath": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\NovaGame.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\alu763\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
+    "C:\\Users\\esteb\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
   ],
   "logs": []
 }

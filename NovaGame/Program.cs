@@ -9,13 +9,19 @@ namespace NovaGame
     class Program
     {
         static Player player;
+        static TextRenderer text;
         static bool running = true;
 
         static void Main()
         {
-            NovaEngine.Init(1600,900);
+            if (NovaEngine.Init(1600, 900) == -1)
+            {
+                Console.WriteLine("Error initializing NovaEngine");
+                return;
+            }
 
             player = new Player();
+            text = new TextRenderer("Hello, World!", new Transform(0,0), new SDL.SDL_Color { r=255, g=255, b=255, a=255 });
 
             // Main loop
             while (running)
@@ -38,7 +44,8 @@ namespace NovaGame
                 
                 // Render
                 player.Render();
-                
+                text.Render();
+
 
                 // Swap/Show Frame
                 NovaEngine.Show();
