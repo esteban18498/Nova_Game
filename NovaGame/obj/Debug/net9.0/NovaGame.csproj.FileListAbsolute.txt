@@ -167,3 +167,7 @@ C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Fonts
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Screens\Lose.png
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Screens\MainMenu.png
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Screens\fondo.png
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Fonts\Arial.ttf
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Screens\fondo.png
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Screens\Lose.png
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\assets\Screens\MainMenu.png

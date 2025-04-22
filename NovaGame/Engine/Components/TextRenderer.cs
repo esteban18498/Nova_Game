@@ -67,10 +67,13 @@ public class TextRenderer
 
         IntPtr surface = SDL_ttf.TTF_RenderUTF8_Blended(font, message, color);
 
+        
+
         if (surface == IntPtr.Zero)
             throw new Exception("Failed to render text: " + SDL_ttf.TTF_GetError());
 
         SDL.SDL_Surface s = Marshal.PtrToStructure<SDL.SDL_Surface>(surface);
+
 
         texWidth = NextPowerOfTwo(s.w);
         texHeight = NextPowerOfTwo(s.h);
@@ -84,11 +87,16 @@ public class TextRenderer
 
         SDL.SDL_Surface cs = Marshal.PtrToStructure<SDL.SDL_Surface>(convertedSurface);
 
+        Console.WriteLine(cs.pixels);
+
+
         NovaGL.glGenTextures(1, out textureId);
         NovaGL.glBindTexture(NovaGL.GL_TEXTURE_2D, textureId);
-        NovaGL.glTexImage2D(NovaGL.GL_TEXTURE_2D, 0, 4, texWidth, texHeight, 0, NovaGL.GL_RGBA, NovaGL.GL_UNSIGNED_BYTE, cs.pixels);
+        NovaGL.glTexImage2D(NovaGL.GL_TEXTURE_2D, 0, (int)NovaGL.GL_RGBA, texWidth, texHeight, 0, NovaGL.GL_RGBA, NovaGL.GL_UNSIGNED_BYTE, cs.pixels);
         NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MIN_FILTER, (int)NovaGL.GL_LINEAR);
         NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MAG_FILTER, (int)NovaGL.GL_LINEAR);
+
+
 
         SDL.SDL_FreeSurface(surface);
         SDL.SDL_FreeSurface(convertedSurface);
@@ -105,7 +113,6 @@ public class TextRenderer
         SpriteShader shader = NovaGL.SpriteShader;
         shader.Use();
 
-        shader.Use();
         shader.SetRotation(transform.Rotation);
         shader.SetPosition(transform.Position.X, transform.Position.Y);
         shader.SetScale(1.0f, 1.0f); // Default scale
