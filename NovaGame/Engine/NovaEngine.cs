@@ -14,7 +14,7 @@ namespace NovaGame.Engine
         public static IntPtr Window => _window;
         static int _width, _height;
         public static int ScreenWidth => _width;
-        public static int ScreeHeight => _height;
+        public static int ScreenHeight => _height;
 
         static IntPtr glContext;
 

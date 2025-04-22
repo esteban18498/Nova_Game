@@ -8,8 +8,10 @@ namespace NovaGame
 {
     class Program
     {
-        static Player player;
-        static TextRenderer text;
+        //static Player player;
+        //static TextRenderer text;
+
+
         static bool running = true;
 
         static void Main()
@@ -20,20 +22,25 @@ namespace NovaGame
                 return;
             }
 
-            player = new Player();
-            text = new TextRenderer("Hello, World!", new Transform(0,0), new SDL.SDL_Color { r=255, g=255, b=255, a=255 });
+            GameManager.Instance.Initialize();
+
+            //player = new Player();
+            // text = new TextRenderer(new Transform(0,0));
 
             // Main loop
             while (running)
             {   
-                running = NovaEngine.ManageEvents();
-
                 NovaEngine.Update();
+                running = NovaEngine.ManageEvents();
+                GameManager.Instance.Update();
+                GameManager.Instance.Render();
+                /*
 
                 // Ejemplo: Comprobar si una tecla está presionada
                 if (NovaEngine.IsKeyPressed(NovaEngine.KEY_W))
                 {
                     Console.WriteLine("Tecla W presionada");
+                    text.SetMessage("Tecla W presionada");
                 }
 
 
@@ -49,11 +56,12 @@ namespace NovaGame
 
                 // Swap/Show Frame
                 NovaEngine.Show();
+                */
             }
 
 
             // Clean up
-            player.Clean();
+            //player.Clean();
             NovaEngine.Clean();
 
         }

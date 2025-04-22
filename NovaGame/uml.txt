@@ -1,0 +1,158 @@
+@startuml
+namespace NovaGame.Engine {
+    class NovaEngine {
+        - IntPtr _window
+        - int _width
+        - int _height
+        - IntPtr glContext
+        - IntPtr NovaFont
+        - Dictionary<SDL.SDL_Keycode, bool> _keyStates
+        - Dictionary<MouseButton, bool> _mouseButtonStates
+        - Vector2 _mousePosition
+        + int ScreenWidth
+        + int ScreenHeight
+        + IntPtr Window
+        + Vector2 GetMousePosition()
+        + Vector2 ScreenToWorld(Vector2 screenPoint)
+        + bool IsKeyPressed(SDL.SDL_Keycode key)
+        + bool IsMouseButtonPressed(MouseButton button)
+        + void HandleInput(SDL.SDL_Event e)
+        + bool ManageEvents()
+        + void Update()
+        + void Show()
+        + void Clear()
+        + void Clean()
+        + int Init(int width = 800, int height = 600)
+        + enum MouseButton { LEFT, RIGHT, MIDDLE }
+    }
+
+    class Transform {
+        - Vector2 position
+        - float rotation
+        + Vector2 Position
+        + float Rotation
+        + void SetRotation(float rotation)
+        + void Rotate(float rotation)
+        + void SetPosition(float x, float y)
+        + void SetPosition(Vector2 position)
+        + void Move(float x, float y)
+        + void Move(Vector2 position)
+        + void MoveUp(float distance)
+        + void MoveDown(float distance)
+        + void MoveRight(float distance)
+        + void MoveLeft(float distance)
+    }
+
+    class Player {
+        - Transform transform
+        - PlayerController controller
+        - string spritePath
+        - SpriteRenderer sprite
+        - AnimationController animationController
+        - float _speed
+        + float Speed
+        - float _rotationSpeed
+        + float RotationSpeed
+        + void Update()
+        + void Render()
+        + void Clean()
+    }
+
+    class PlayerController {
+        - Transform transform
+        - Player player
+        + void Update()
+    }
+
+    class SpriteRenderer {
+        - Transform transform
+        - uint textureID
+        - int _width
+        - int _height
+        + int Width
+        + int Height
+        + void Render()
+        + void Clean()
+    }
+
+    class AnimationController {
+        - SpriteRenderer spriteRenderer
+        - List<uint> textureIDs
+        - int texturesIndex
+        - int frameCount
+        - float frameDuration
+        - float initTime
+        - float elapsedTime
+        + void Update()
+        + void Clean()
+    }
+
+    class SurvivalScene {
+        - Transform sceneTransform
+        - SpriteRenderer background
+        - Player player
+        + void Update()
+        + void Render()
+    }
+
+    class TextRenderer {
+        - uint textureId
+        - int texWidth
+        - int texHeight
+        - int textWidth
+        - int textHeight
+        - Vector2 position
+        - Vector3 color
+        - string message
+        - bool isLoaded
+        + TextRenderer(string message, Vector2 position, Vector3 color)
+        + void Render()
+        + void Destroy()
+    }
+
+    class SpriteShader {
+        - int _program
+        - int _rotationLoc
+        - int _positionLoc
+        - int _scaleLoc
+        - int _viewportSizeLoc
+        - int _textureLoc
+        + void Use()
+        + void SetRotation(float radians)
+        + void SetPosition(float x, float y)
+        + void SetScale(float x, float y)
+        + void SetViewportSize(float width, float height)
+        + void SetTexture(int textureUnit)
+        + void DeleteShaderProgram()
+    }
+
+    class NovaGL {
+        + void glClearColor(float r, float g, float b, float a)
+        + void glClear(uint mask)
+        + void glEnable(uint cap)
+        + void glBlendFunc(uint sfactor, uint dfactor)
+        + void glGenTextures(int n, out uint textures)
+        + void glBindTexture(uint target, uint texture)
+        + void glTexParameteri(uint target, uint pname, int param)
+        + void glTexImage2D(uint target, int level, int internalformat, int width, int height, int border, uint format, uint type, IntPtr pixels)
+        + void glGenerateMipmap(uint target)
+        + void glActiveTexture(uint texture)
+        + void glDeleteTextures(int n, ref uint textures)
+    }
+}
+
+NovaEngine --> Transform : Uses
+NovaEngine --> Player : Manages
+Player --> PlayerController : Has
+Player --> SpriteRenderer : Has
+Player --> AnimationController : Has
+PlayerController --> Transform : Controls
+SpriteRenderer --> Transform : Uses
+AnimationController --> SpriteRenderer : Controls
+SurvivalScene --> Transform : Uses
+SurvivalScene --> SpriteRenderer : Uses
+SurvivalScene --> Player : Manages
+SurvivalScene --> TextRenderer : Uses
+TextRenderer --> NovaGL : Uses
+SpriteRenderer --> SpriteShader : Uses
+@enduml

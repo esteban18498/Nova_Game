@@ -14,25 +14,56 @@ public class TextRenderer
     private int texWidth, texHeight;
     private int textWidth, textHeight;
     private SDL_Color color;
+    private IntPtr font;
     private string message;
     private bool isLoaded = false;
 
     uint VAO, VBO, EBO;
     float quadWidth, quadHeight;
 
-    public TextRenderer(string message, Transform transform, SDL_Color color)
+    /// <summary>
+    /// Constructor for TextRenderer, null color = white, null font = NovaFont(Arial)
+    /// </summary>
+    /// <param name="transform"></param>
+    /// <param name="message"></param>
+    /// <param name="color">null=>White</param>
+    /// <param name="font">null=>NovaFont(Arial)</param>
+    public TextRenderer(Transform transform,string message= "Hello, World!", SDL_Color? color = null, IntPtr? font = null)
     {
-        this.message = message;
         this.transform = transform;
-        this.color = color;
-        LoadText();
+        this.message = message;
+
+        if (font != null)
+        {
+            this.font = font.Value;
+        }
+        else
+        {
+            this.font = NovaEngine.NovaFont;
+        }
+
+        if (color != null)
+        {
+            this.color = color.Value;
+        }
+        else
+        {
+            this.color = new SDL_Color { r=255, g=255, b=255, a=255 }; // Default white color
+        }
+        RasterizeText();
     }
 
-    private void LoadText()
+
+    public void SetMessage(string message)
     {
-        IntPtr font = NovaEngine.NovaFont;
-        if (font == IntPtr.Zero)
-            throw new Exception("Font not initialized in NovaEngine");
+        this.message = message;
+        Clean();
+        RasterizeText();
+    }
+
+
+    private void RasterizeText()
+    {
 
         IntPtr surface = SDL_ttf.TTF_RenderUTF8_Blended(font, message, color);
 
@@ -78,7 +109,7 @@ public class TextRenderer
         shader.SetRotation(transform.Rotation);
         shader.SetPosition(transform.Position.X, transform.Position.Y);
         shader.SetScale(1.0f, 1.0f); // Default scale
-        shader.SetViewportSize(NovaEngine.ScreenWidth, NovaEngine.ScreeHeight);
+        shader.SetViewportSize(NovaEngine.ScreenWidth, NovaEngine.ScreenHeight);
         shader.SetTexture(0); // Texture unit 0
 
         NovaGL.glActiveTexture(NovaGL.GL_TEXTURE0);
