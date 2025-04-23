@@ -24,6 +24,9 @@ namespace NovaGame
         {
 
             /*
+             * Controlles de Teclado
+             *      WASD + QE
+             * 
             // Check for key presses and update the transform accordingly
             if (NovaEngine.IsKeyPressed(NovaEngine.KEY_UP))
             {
@@ -41,9 +44,6 @@ namespace NovaGame
             {
                 transform.MoveRight(Time.DeltaTime * player.Speed);
             }
-            */
-
-            /*
             if (NovaEngine.IsKeyPressed(NovaEngine.KEY_Q))
             {
                 transform.Rotate(Time.DeltaTime * player.RotationSpeed);
@@ -53,6 +53,12 @@ namespace NovaGame
                 transform.Rotate(Time.DeltaTime * -player.RotationSpeed);
             }*/
 
+
+
+            /*
+             * Controles de Mouse
+             *      posision del mouse + LClick para avanzar
+             */
             // Obtener la posición del mouse
             Vector2 mousePos = NovaEngine.GetMousePosition();
             mousePos = NovaEngine.ScreenToWorld(mousePos);

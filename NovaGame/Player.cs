@@ -11,7 +11,9 @@ namespace NovaGame
 {
     public class Player
     {
-        private Transform transform;
+        private Transform _transform;
+        public Transform Transform=>_transform;
+
         private PlayerController controller;
         private string spritePath = "assets/player.png";
         private SpriteRenderer sprite;
@@ -33,9 +35,9 @@ namespace NovaGame
 
         public Player()
         {
-            transform = new Transform();
-            controller = new PlayerController(this , transform);
-            sprite = new SpriteRenderer(spritePath, transform);
+            _transform = new Transform();
+            controller = new PlayerController(this , _transform);
+            sprite = new SpriteRenderer(spritePath, _transform);
             animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
         }
 

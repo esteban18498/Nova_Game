@@ -64,45 +64,50 @@ public class TextRenderer
 
     private void RasterizeText()
     {
+        IntPtr surface = IntPtr.Zero;
+        IntPtr convertedSurface = IntPtr.Zero;
 
-        IntPtr surface = SDL_ttf.TTF_RenderUTF8_Blended(font, message, color);
+        try
+        {
+            surface = SDL_ttf.TTF_RenderUTF8_Blended(font, message, color);
+            if (surface == IntPtr.Zero)
+                throw new Exception("Failed to render text: " + SDL_ttf.TTF_GetError());
 
-        
+            SDL.SDL_Surface s = Marshal.PtrToStructure<SDL.SDL_Surface>(surface);
 
-        if (surface == IntPtr.Zero)
-            throw new Exception("Failed to render text: " + SDL_ttf.TTF_GetError());
+            texWidth = NextPowerOfTwo(s.w);
+            texHeight = NextPowerOfTwo(s.h);
+            textWidth = s.w;
+            textHeight = s.h;
 
-        SDL.SDL_Surface s = Marshal.PtrToStructure<SDL.SDL_Surface>(surface);
+            convertedSurface = SDL.SDL_CreateRGBSurface(0, texWidth, texHeight, 32,
+                0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
 
+            if (convertedSurface == IntPtr.Zero)
+                throw new Exception("Failed to create RGB surface: " + SDL.SDL_GetError());
 
-        texWidth = NextPowerOfTwo(s.w);
-        texHeight = NextPowerOfTwo(s.h);
-        textWidth = s.w;
-        textHeight = s.h;
+            int blitResult = SDL.SDL_BlitSurface(surface, IntPtr.Zero, convertedSurface, IntPtr.Zero);
+            if (blitResult != 0)
+                throw new Exception("BlitSurface failed: " + SDL.SDL_GetError());
 
-        IntPtr convertedSurface = SDL.SDL_CreateRGBSurface(0, texWidth, texHeight, 32,
-            0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
+            SDL.SDL_Surface cs = Marshal.PtrToStructure<SDL.SDL_Surface>(convertedSurface);
 
-        SDL.SDL_BlitSurface(surface, IntPtr.Zero, convertedSurface, IntPtr.Zero);
+            NovaGL.glGenTextures(1, out textureId);
+            NovaGL.glBindTexture(NovaGL.GL_TEXTURE_2D, textureId);
+            NovaGL.glTexImage2D(NovaGL.GL_TEXTURE_2D, 0, (int)NovaGL.GL_RGBA, texWidth, texHeight, 0, NovaGL.GL_RGBA, NovaGL.GL_UNSIGNED_BYTE, cs.pixels);
+            NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MIN_FILTER, (int)NovaGL.GL_LINEAR);
+            NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MAG_FILTER, (int)NovaGL.GL_LINEAR);
 
-        SDL.SDL_Surface cs = Marshal.PtrToStructure<SDL.SDL_Surface>(convertedSurface);
-
-        Console.WriteLine(cs.pixels);
-
-
-        NovaGL.glGenTextures(1, out textureId);
-        NovaGL.glBindTexture(NovaGL.GL_TEXTURE_2D, textureId);
-        NovaGL.glTexImage2D(NovaGL.GL_TEXTURE_2D, 0, (int)NovaGL.GL_RGBA, texWidth, texHeight, 0, NovaGL.GL_RGBA, NovaGL.GL_UNSIGNED_BYTE, cs.pixels);
-        NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MIN_FILTER, (int)NovaGL.GL_LINEAR);
-        NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MAG_FILTER, (int)NovaGL.GL_LINEAR);
-
-
-
-        SDL.SDL_FreeSurface(surface);
-        SDL.SDL_FreeSurface(convertedSurface);
-        SetupRenderQuad(textWidth, textHeight);
-
-        isLoaded = true;
+            SetupRenderQuad(textWidth, textHeight);
+            isLoaded = true;
+        }
+        finally
+        {
+            if (surface != IntPtr.Zero)
+                SDL.SDL_FreeSurface(surface);
+            if (convertedSurface != IntPtr.Zero)
+                SDL.SDL_FreeSurface(convertedSurface);
+        }
     }
 
     public void Render()
@@ -171,14 +176,39 @@ public class TextRenderer
         NovaGL.glBindVertexArray(0);
     }
 
+
     public void Clean()
     {
         if (isLoaded)
         {
-            NovaGL.glDeleteTextures(1, ref textureId);
+            // Delete OpenGL texture
+            if (textureId != 0)
+            {
+                NovaGL.glDeleteTextures(1, ref textureId);
+                textureId = 0;
+            }
+
+            // Delete OpenGL buffers
+            if (VBO != 0)
+            {
+                NovaGL.glDeleteBuffers(1, ref VBO);
+                VBO = 0;
+            }
+            if (EBO != 0)
+            {
+                NovaGL.glDeleteBuffers(1, ref EBO);
+                EBO = 0;
+            }
+            if (VAO != 0)
+            {
+                NovaGL.glDeleteVertexArrays(1, ref VAO);
+                VAO = 0;
+            }
+
             isLoaded = false;
         }
     }
+
 
     private int NextPowerOfTwo(int x)
     {

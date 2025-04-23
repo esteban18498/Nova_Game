@@ -81,6 +81,9 @@
     <None Update="assets\Animations\PlayerShip\Idle\3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="assets\enemy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="assets\Fonts\Arial.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
