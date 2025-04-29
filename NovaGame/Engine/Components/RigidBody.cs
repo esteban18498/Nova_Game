@@ -23,7 +23,6 @@ namespace NovaGame.Engine.Components
         public float Drag = 1f;
 
 
-
         public RigidBody(Transform transform)
         {
             this.transform = transform;
@@ -39,53 +38,6 @@ namespace NovaGame.Engine.Components
         {
             this.velocity = new Vector2(velocity.X, velocity.Y);
         }
-
-        /*
-        public void Update()
-        {
-            velocity += acceleration * Time.DeltaTime;
-
-            // Update the position based on velocity
-            transform.SetPosition(transform.Position.X + velocity.X * Time.DeltaTime, transform.Position.Y + velocity.Y * Time.DeltaTime);
-
-
-
-            Vector2 dragForce = velocity * Drag;
-            if (velocity.LengthSquared() > 0)
-            {
-
-
-                if (acceleration.X < 0 && dragForce.X < acceleration.X)
-                {
-                    acceleration.X = 0;
-                }
-                else if (acceleration.X > 0 && dragForce.X > acceleration.X)
-                {
-                    acceleration.X = 0;
-                }
-                else
-                {
-                    acceleration.X -= dragForce.X;
-                }
-
-                if (acceleration.Y < 0 && dragForce.Y < acceleration.Y)
-                {
-                    acceleration.Y = 0;
-                }
-                else if (acceleration.Y > 0 && dragForce.Y > acceleration.Y)
-                {
-                    acceleration.Y = 0;
-                }
-                else
-                {
-                    acceleration.Y -= dragForce.Y;
-                }
-
-            }
-            Debug.WriteLine($"Velocity: {velocity}, Acceleration: {acceleration}");
-
-
-        }*/
 
         public void Update()
         {

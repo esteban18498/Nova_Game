@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NovaGame.Engine.Components;
 using NovaGame.Engine;
 using System.Numerics;
+using SDL2;
 
 namespace NovaGame
 {
@@ -16,6 +17,9 @@ namespace NovaGame
         private string spritePath = "assets/enemy.png";
         private SpriteRenderer sprite;
         private Transform target;
+        private RigidBody rb;
+
+        private float followDistance= 500;
 
 
         private float _speed = 100;
@@ -41,6 +45,7 @@ namespace NovaGame
             float x = rgen.Next(NovaEngine.ScreenWidth / 3, NovaEngine.ScreenWidth / 2);
             float y = rgen.Next(NovaEngine.ScreenHeight / 3, NovaEngine.ScreenHeight / 2);
             transform = new Transform(x, y);
+            rb = new RigidBody(transform);
             sprite = new SpriteRenderer(spritePath, transform); 
        
         }
@@ -55,13 +60,21 @@ namespace NovaGame
 
             // Actualizar la rotación del transform
             transform.SetRotation(NovaMath.LerpAngle(transform.Rotation, angle, Time.DeltaTime * _rotationSpeed));
-            transform.MoveDown(Time.DeltaTime * _speed); ;
+            
+            if( followDistance < Vector2.Distance(transform.Position, targetPos))
+            {
+                //transform.MoveDown(Time.DeltaTime * _speed);
+                rb.AddLocalForce(new Vector2(0, -1) * _speed);
+
+            }
+            
 
 
         }
         public void Render()
         {
             sprite.Render();
+            rb.Update();
         }
 
         public void Clean() {
