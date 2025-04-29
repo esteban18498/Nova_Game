@@ -12,12 +12,14 @@ namespace NovaGame
     public class PlayerController
     {
         private Transform transform;
+        private RigidBody rb;
         private Player player;
 
-        public PlayerController(Player player, Transform transform)
+        public PlayerController(Player player, Transform transform, RigidBody rb)
         {
             this.transform = transform;
             this.player = player;
+            this.rb = rb;
         }
 
         public void Update()
@@ -76,7 +78,10 @@ namespace NovaGame
 
             if (NovaEngine.IsMouseButtonPressed(NovaEngine.MouseButton.LEFT))
             {
-                transform.MoveUp(Time.DeltaTime * player.Speed); ;
+                //transform.MoveUp(Time.DeltaTime * player.Speed);
+                //;
+
+                rb.AddLocalForce(new Vector2(0, 1) * player.Speed);
             }
         }
     }

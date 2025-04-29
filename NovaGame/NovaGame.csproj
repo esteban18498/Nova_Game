@@ -101,4 +101,14 @@
     </None>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\.editorconfig" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\.editorconfig" />
+  </ItemGroup>
+
 </Project>

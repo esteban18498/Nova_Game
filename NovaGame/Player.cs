@@ -13,6 +13,8 @@ namespace NovaGame
     {
         private Transform _transform;
         public Transform Transform=>_transform;
+        private RigidBody rb;
+
 
         private PlayerController controller;
         private string spritePath = "assets/player.png";
@@ -36,7 +38,8 @@ namespace NovaGame
         public Player()
         {
             _transform = new Transform();
-            controller = new PlayerController(this , _transform);
+            rb = new RigidBody(_transform);
+            controller = new PlayerController(this , _transform, rb);
             sprite = new SpriteRenderer(spritePath, _transform);
             animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
         }
@@ -44,6 +47,7 @@ namespace NovaGame
         public void Update()
         {
             controller.Update();
+            rb.Update();
             animationController.Update();
         }
 
