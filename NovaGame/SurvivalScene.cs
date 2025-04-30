@@ -19,13 +19,29 @@ namespace NovaGame
         private Player player;
         private Enemy enemy;
 
+        private List<NovaObject> pool;
+
         public SurvivalScene() {
             sceneTransform = new Transform();
             background = new SpriteRenderer("assets/Screens/fondo.png", sceneTransform);
+            pool = new List<NovaObject>();
 
             player = new Player();
+            pool.Add(player);
+            
             Clock = new Qlock();
+            pool.Add(Clock);
+
             enemy = new Enemy(player.Transform);
+            pool.Add(enemy);
+            enemy = new Enemy(player.Transform);
+            pool.Add(enemy); enemy = new Enemy(player.Transform);
+            pool.Add(enemy); enemy = new Enemy(player.Transform);
+            pool.Add(enemy); enemy = new Enemy(player.Transform);
+            pool.Add(enemy); enemy = new Enemy(player.Transform);
+            pool.Add(enemy); enemy = new Enemy(player.Transform);
+            pool.Add(enemy); enemy = new Enemy(player.Transform);
+            pool.Add(enemy);
 
             //text = new TextRenderer(sceneTransform, "0");
 
@@ -40,9 +56,10 @@ namespace NovaGame
         public void Update()
         {
             // Update player and other game objects
-            Clock.Update();
-            player.Update();
-            enemy.Update();
+            foreach (NovaObject obj in pool)
+            {
+                obj.Update();
+            }
 
         }
 
@@ -50,9 +67,10 @@ namespace NovaGame
         {
             // Render background and player
             background.Render();
-            enemy.Render();
-            player.Render();
-            Clock.Render();
+            foreach (NovaObject obj in pool)
+            {
+                obj.Render();
+            }
         }
 
 

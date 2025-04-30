@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NovaGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5105c4a3fe378294c678494593c73868001b5b44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c51afb1e25d26bb172e2b4e494ab0dfd4fc864b")]
 [assembly: System.Reflection.AssemblyProductAttribute("NovaGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NovaGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

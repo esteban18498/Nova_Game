@@ -11,15 +11,14 @@ using SDL2;
 
 namespace NovaGame
 {
-    public class Enemy
+    public class Enemy : NovaObject
     {
-        private Transform transform;
         private string spritePath = "assets/enemy.png";
         private SpriteRenderer sprite;
         private Transform target;
         private RigidBody rb;
 
-        private float followDistance= 500;
+        private float followDistance= 300;
 
 
         private float _speed = 100;
@@ -36,32 +35,36 @@ namespace NovaGame
             //set { _rotationSpeed = value; }
         }
 
-        public Enemy(Transform Target) { 
+        public Enemy(Transform Target) : base()
+        {
 
+            _transform.SetScale(0.5f, 0.5f);
             target = Target;
 
             Random rgen= new Random();
 
-            float x = rgen.Next(NovaEngine.ScreenWidth / 3, NovaEngine.ScreenWidth / 2);
-            float y = rgen.Next(NovaEngine.ScreenHeight / 3, NovaEngine.ScreenHeight / 2);
-            transform = new Transform(x, y);
-            rb = new RigidBody(transform);
-            sprite = new SpriteRenderer(spritePath, transform); 
+            float x = rgen.Next(-NovaEngine.ScreenWidth / 3, NovaEngine.ScreenWidth / 3);
+            float y = rgen.Next(-NovaEngine.ScreenHeight / 3, NovaEngine.ScreenHeight / 3);
+            //_transform = new Transform(x, y);
+
+            _transform.SetPosition(x,y);
+            rb = new RigidBody(_transform);
+            sprite = new SpriteRenderer(spritePath, _transform); 
        
         }
 
-        public void Update() {
+        public override void Update() {
 
             //follow player
             Vector2 targetPos = target.Position;
             //Vector2 direction = transform.Position - targetPos;
-            Vector2 direction = targetPos - transform.Position;
+            Vector2 direction = targetPos - _transform.Position;
             float angle = MathF.Atan2(direction.Y, direction.X) + MathF.PI / 2; //-----> + PI/2 = rotar90 grados el sprite. correccion de direccion
 
             // Actualizar la rotación del transform
-            transform.SetRotation(NovaMath.LerpAngle(transform.Rotation, angle, Time.DeltaTime * _rotationSpeed));
+            _transform.SetRotation(NovaMath.LerpAngle(_transform.Rotation, angle, Time.DeltaTime * _rotationSpeed));
             
-            if( followDistance < Vector2.Distance(transform.Position, targetPos))
+            if( followDistance < Vector2.Distance(_transform.Position, targetPos))
             {
                 //transform.MoveDown(Time.DeltaTime * _speed);
                 rb.AddLocalForce(new Vector2(0, -1) * _speed);
@@ -71,13 +74,13 @@ namespace NovaGame
 
 
         }
-        public void Render()
+        public override void Render()
         {
             sprite.Render();
             rb.Update();
         }
 
-        public void Clean() {
+        public override void Clean() {
             sprite.Clean();
         }
 

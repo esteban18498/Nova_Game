@@ -9,10 +9,8 @@ using NovaGame.Engine.Components;
 
 namespace NovaGame
 {
-    public class Player
+    public class Player : NovaObject
     {
-        private Transform _transform;
-        public Transform Transform=>_transform;
         private RigidBody rb;
 
 
@@ -35,28 +33,28 @@ namespace NovaGame
             //set { _rotationSpeed = value; }
         }
 
-        public Player()
+        public Player() : base() 
         {
-            _transform = new Transform();
+            _transform.SetScale(0.5f, 0.5f);
             rb = new RigidBody(_transform);
             controller = new PlayerController(this , _transform, rb);
             sprite = new SpriteRenderer(spritePath, _transform);
             animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
         }
 
-        public void Update()
+        public override void Update()
         {
             controller.Update();
             rb.Update();
             animationController.Update();
         }
 
-        public void Render()
+        public override void Render()
         {
             sprite.Render();
         }
 
-        public void Clean()
+        public override void Clean()
         {
             sprite.Clean();
             animationController.Clean();

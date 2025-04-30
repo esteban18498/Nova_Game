@@ -50,7 +50,7 @@ namespace NovaGame.Engine.Components
 
             shader.SetRotation(transform.Rotation );
             shader.SetPosition(transform.Position.X, transform.Position.Y);
-            shader.SetScale(1.0f, 1.0f); // Default scale
+            shader.SetScale(transform.Scale.X, transform.Scale.Y); // Default scale
             shader.SetViewportSize(NovaEngine.ScreenWidth, NovaEngine.ScreenHeight);
             shader.SetTexture(0); // Texture unit 0
 

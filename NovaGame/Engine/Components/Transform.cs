@@ -13,6 +13,10 @@ namespace NovaGame.Engine.Components
 
         public Vector2 Position => position;
 
+        private Vector2 scale;
+
+        public Vector2 Scale => scale;
+
         private float rotation;
         public float Rotation => rotation;
 
@@ -20,32 +24,45 @@ namespace NovaGame.Engine.Components
         public Transform()
         {
             position = new Vector2();
+            scale = new Vector2(1,1);
             rotation = 0;
         }
 
         public Transform(float x, float y)
         {
             position = new Vector2(x, y);
+            scale = new Vector2(1, 1);
             rotation = 0;
         }
 
         public Transform(Vector2 position)
         {
             this.position = new Vector2(position.X, position.Y);
+            scale = new Vector2(1, 1);
             rotation = 0;
         }
         public Transform(float x, float y, float r)
         {
             position = new Vector2(x, y);
+            scale = new Vector2(1, 1);
             rotation = r;
         }
 
         public Transform(Vector2 position, float r)
         {
             this.position = new Vector2(position.X, position.Y);
+            scale = new Vector2(1, 1);
             rotation = r;
         }
 
+        public void SetScale(float x, float y)
+        {
+            scale = new Vector2(x, y);
+        }
+        public void SetScale(Vector2 scale)
+        {
+            this.scale = scale;
+        }
 
         public void SetRotation(float rotation)
         {

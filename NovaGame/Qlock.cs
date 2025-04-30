@@ -8,20 +8,20 @@ using NovaGame.Engine;
 
 namespace NovaGame
 {
-    public class Qlock
+    public class Qlock : NovaObject
     {
-        private Transform transform;
+
         private TextRenderer text;
         private float time;
 
 
         public Qlock()
         {
-            transform = new Transform(NovaEngine.ScreenWidth / 3, NovaEngine.ScreenHeight / 3);
+            _transform.SetPosition(NovaEngine.ScreenWidth / 3, NovaEngine.ScreenHeight / 3);
             time = 0;
-            text = new TextRenderer(transform, $"0:0");
+            text = new TextRenderer(_transform, $"0:0");
         }
-        public void Update()
+        public override void Update()
         {
             this.time += Time.DeltaTime;
 
@@ -31,9 +31,14 @@ namespace NovaGame
 
             text.SetMessage($"{minutes}:{seconds}");
         }
-        public void Render()
+        public override void Render()
         {
             text.Render();
+        }
+
+        public override void Clean()
+        {
+
         }
     }
 }
