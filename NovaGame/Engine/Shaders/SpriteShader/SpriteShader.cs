@@ -1,4 +1,5 @@
-﻿using NovaGame.Engine;
+﻿using System.Diagnostics;
+using NovaGame.Engine;
 namespace NovaGame.Engine.Shaders
 {
 
@@ -12,6 +13,7 @@ public class SpriteShader : IDisposable
     private int _viewportSizeLoc;
     private int _textureLoc;
 
+        /*
         string vertexShaderSource =
             "#version 330 core\n" +
             "layout (location = 0) in vec2 aPos;\n" +  // Local coordinates (typically -0.5 to 0.5 for a quad)
@@ -51,14 +53,23 @@ public class SpriteShader : IDisposable
     "void main()\n" +
     "{\n" +
     "   FragColor = texture(uTexture, TexCoord);\n" +
-    "}\0";
+    "}\0";*/
+        
+     string vertexShaderPath= "Engine\\Shaders\\SpriteShader\\vertexShader.glsl";
+     string fragmentShaderPath= "Engine\\Shaders\\SpriteShader\\fragmentShader.glsl";
 
 
 
     public SpriteShader()
     {
-        // Create and compile shaders
-        uint vertexShader = NovaGL.glCreateShader(NovaGL.GL_VERTEX_SHADER);
+            // Leer los shaders desde los archivos
+        string vertexShaderSource = File.ReadAllText(vertexShaderPath);
+        string fragmentShaderSource = File.ReadAllText(fragmentShaderPath);
+
+
+
+            // Create and compile shaders
+            uint vertexShader = NovaGL.glCreateShader(NovaGL.GL_VERTEX_SHADER);
         NovaGL.glShaderSource(vertexShader, 1, new[] { vertexShaderSource }, null);
         NovaGL.glCompileShader(vertexShader);
 

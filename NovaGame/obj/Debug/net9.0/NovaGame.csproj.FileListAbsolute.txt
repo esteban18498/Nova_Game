@@ -233,3 +233,5 @@ C:\Users\alu864\Desktop\repos\Nova_Game\NovaGame\obj\Debug\net9.0\refint\NovaGam
 C:\Users\alu864\Desktop\repos\Nova_Game\NovaGame\obj\Debug\net9.0\NovaGame.pdb
 C:\Users\alu864\Desktop\repos\Nova_Game\NovaGame\obj\Debug\net9.0\NovaGame.genruntimeconfig.cache
 C:\Users\alu864\Desktop\repos\Nova_Game\NovaGame\obj\Debug\net9.0\ref\NovaGame.dll
+C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\SpriteShader\fragmentShader.glsl
+C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\SpriteShader\vertexShader.glsl

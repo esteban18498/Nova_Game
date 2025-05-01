@@ -99,6 +99,12 @@
     <None Update="assets\Screens\MainMenu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Engine\Shaders\SpriteShader\fragmentShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Engine\Shaders\SpriteShader\vertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 
