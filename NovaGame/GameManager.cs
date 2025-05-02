@@ -32,7 +32,6 @@ namespace NovaGame
 
         private SurvivalScene survivalScene;
 
-        private CircleRenderer circleRenderer;
 
 
         public static GameManager Instance
@@ -63,7 +62,6 @@ namespace NovaGame
 
             survivalScene = new SurvivalScene();
 
-            circleRenderer = new CircleRenderer(new Transform(0, 0), 50f, 2);
 
         }
         public void Update()
@@ -111,7 +109,6 @@ namespace NovaGame
                     break;
             }
 
-            circleRenderer.Render();
             NovaEngine.Show();
         }
 

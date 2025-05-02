@@ -19,6 +19,8 @@ namespace NovaGame
         private SpriteRenderer sprite;
         private AnimationController animationController;
 
+        private CircleRenderer shield;
+
         private float _speed=500;
         public float Speed
         {
@@ -40,6 +42,9 @@ namespace NovaGame
             controller = new PlayerController(this , _transform, rb);
             sprite = new SpriteRenderer(spritePath, _transform);
             animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
+
+            shield = new CircleRenderer(_transform, sprite.Height/2,5f);
+
         }
 
         public override void Update()
@@ -52,6 +57,7 @@ namespace NovaGame
         public override void Render()
         {
             sprite.Render();
+            shield.Render();
         }
 
         public override void Clean()

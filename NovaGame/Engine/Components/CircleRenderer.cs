@@ -36,8 +36,8 @@ namespace NovaGame.Engine.Components
             shader.Use();
 
             shader.SetPosition(transform.Position.X, transform.Position.Y);
-            shader.SetRadius(radius);
-            shader.SetThickness(thickness);
+            shader.SetRadius(95);
+            shader.SetThickness(5f);
             shader.SetCircleColor(255f,255f,255f,255f);
             shader.SetViewportSize(NovaEngine.ScreenWidth, NovaEngine.ScreenHeight);
 
