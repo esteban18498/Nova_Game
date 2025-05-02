@@ -257,6 +257,11 @@ namespace NovaGame.Engine
         private static glUniform2fvDelegate _glUniform2fv;
         public static void glUniform2fv(int location, int count, float[] value) => _glUniform2fv(location, count, value);
 
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        private delegate void glUniform4fvDelegate(int location, int count, float[] value);
+        private static glUniform4fvDelegate _glUniform4fv;
+        public static void glUniform4fv(int location, int count, float[] value) => _glUniform4fv(location, count, value);
+
 #nullable restore
 
         public static void LoadFunctionPointers(Func<string, IntPtr> getProcAddress)
@@ -300,6 +305,7 @@ namespace NovaGame.Engine
             _glUniform1i = Marshal.GetDelegateForFunctionPointer<glUniform1iDelegate>(getProcAddress("glUniform1i"));
             _glUniform1f = Marshal.GetDelegateForFunctionPointer<glUniform1fDelegate>(getProcAddress("glUniform1f"));
             _glUniform2fv = Marshal.GetDelegateForFunctionPointer<glUniform2fvDelegate>(getProcAddress("glUniform2fv"));
+            _glUniform4fv = Marshal.GetDelegateForFunctionPointer<glUniform4fvDelegate>(getProcAddress("glUniform4fv"));
             _glGetString = Marshal.GetDelegateForFunctionPointer<glGetStringDelegate>(getProcAddress("glGetString"));
             _glGetIntegerv = Marshal.GetDelegateForFunctionPointer<glGetIntegervDelegate>(getProcAddress("glGetIntegerv"));
         }
@@ -329,15 +335,20 @@ namespace NovaGame.Engine
 #nullable disable
         private static SpriteShader _spriteShader;
         public static SpriteShader SpriteShader=>_spriteShader;
+
+        private static CircleShader _circleShader;
+        public static CircleShader CircleShader => _circleShader;
 #nullable enable
         public static void CompileShaders()
         {
             _spriteShader=new SpriteShader();
+            _circleShader = new CircleShader();
         }
 
         public static void CleanShaders()
         {
             _spriteShader.DeleteShaderProgram();
+            _circleShader.DeleteShaderProgram();
         }
     }
 

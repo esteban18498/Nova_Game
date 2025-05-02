@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\components\\spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\components\\spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\components\\circlerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\components\\circlerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\shaders\\circleshader\\circleshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\shaders\\circleshader\\circleshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\shaders\\circleshader\\fragmentshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\shaders\\circleshader\\fragmentshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\shaders\\circleshader\\vertexshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\shaders\\circleshader\\vertexshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\shaders\\spriteshader\\vertexshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\shaders\\spriteshader\\vertexshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\shaders\\spriteshader\\spriteshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\shaders\\spriteshader\\spriteshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\shaders\\spriteshader\\fragmentshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\shaders\\spriteshader\\fragmentshader.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\esteb\\documents\\github\\nova_game\\novagame\\engine\\novagl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\novagl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,53 +37,8 @@
       "VerticalTabListWidth": 591,
       "DocumentGroups": [
         {
-          "DockedWidth": 294,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "fragmentShader.glsl",
-              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\fragmentShader.glsl",
-              "RelativeDocumentMoniker": "Engine\\Shaders\\SpriteShader\\fragmentShader.glsl",
-              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\fragmentShader.glsl",
-              "RelativeToolTip": "Engine\\Shaders\\SpriteShader\\fragmentShader.glsl",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-01T17:17:13.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "vertexShader.glsl",
-              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
-              "RelativeDocumentMoniker": "Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
-              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
-              "RelativeToolTip": "Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-01T17:01:01.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SpriteRenderer.cs",
-              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\SpriteRenderer.cs",
-              "RelativeDocumentMoniker": "Engine\\Components\\SpriteRenderer.cs",
-              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\SpriteRenderer.cs",
-              "RelativeToolTip": "Engine\\Components\\SpriteRenderer.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAIwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T22:12:30.76Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 223,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 315,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -95,28 +58,100 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SpriteShader.cs",
-              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\SpriteShader.cs",
-              "RelativeDocumentMoniker": "Engine\\Shaders\\SpriteShader\\SpriteShader.cs",
-              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\SpriteShader.cs",
-              "RelativeToolTip": "Engine\\Shaders\\SpriteShader\\SpriteShader.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAwwA0AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T20:43:35.929Z",
+              "DocumentIndex": 5,
+              "Title": "vertexShader.glsl",
+              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
+              "RelativeDocumentMoniker": "Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
+              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
+              "RelativeToolTip": "Engine\\Shaders\\SpriteShader\\vertexShader.glsl",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T00:55:49.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "NovaGL.cs",
+              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\NovaGL.cs",
+              "RelativeDocumentMoniker": "Engine\\NovaGL.cs",
+              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\NovaGL.cs",
+              "RelativeToolTip": "Engine\\NovaGL.cs",
+              "ViewState": "AgIAADsBAAAAAAAAAAAWwE8BAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T00:44:13.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CircleShader.cs",
+              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\CircleShader.cs",
+              "RelativeDocumentMoniker": "Engine\\Shaders\\CircleShader\\CircleShader.cs",
+              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\CircleShader.cs",
+              "RelativeToolTip": "Engine\\Shaders\\CircleShader\\CircleShader.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAIAwwEwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T00:26:21.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CircleRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\CircleRenderer.cs",
+              "RelativeDocumentMoniker": "Engine\\Components\\CircleRenderer.cs",
+              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Components\\CircleRenderer.cs",
+              "RelativeToolTip": "Engine\\Components\\CircleRenderer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T00:26:45.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\GameManager.cs",
               "RelativeDocumentMoniker": "GameManager.cs",
               "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\GameManager.cs",
               "RelativeToolTip": "GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAqwC0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T16:09:17.291Z"
+              "WhenOpened": "2025-04-21T16:09:17.291Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 219,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fragmentShader.glsl",
+              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\fragmentShader.glsl",
+              "RelativeDocumentMoniker": "Engine\\Shaders\\CircleShader\\fragmentShader.glsl",
+              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\fragmentShader.glsl",
+              "RelativeToolTip": "Engine\\Shaders\\CircleShader\\fragmentShader.glsl",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T00:57:46.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "vertexShader.glsl",
+              "DocumentMoniker": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\vertexShader.glsl",
+              "RelativeDocumentMoniker": "Engine\\Shaders\\CircleShader\\vertexShader.glsl",
+              "ToolTip": "C:\\Users\\esteb\\Documents\\GitHub\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\vertexShader.glsl",
+              "RelativeToolTip": "Engine\\Shaders\\CircleShader\\vertexShader.glsl",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvw8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T00:55:31.492Z",
+              "EditorCaption": ""
             }
           ]
         }
