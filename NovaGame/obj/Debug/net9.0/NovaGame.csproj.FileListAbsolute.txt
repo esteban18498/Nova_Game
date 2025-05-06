@@ -237,3 +237,7 @@ C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shade
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\SpriteShader\vertexShader.glsl
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\CircleShader\fragmentShader.glsl
 C:\Users\esteb\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\CircleShader\vertexShader.glsl
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\CircleShader\fragmentShader.glsl
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\CircleShader\vertexShader.glsl
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\SpriteShader\fragmentShader.glsl
+C:\Users\alu864\Documents\GitHub\Nova_Game\NovaGame\bin\Debug\net9.0\Engine\Shaders\SpriteShader\vertexShader.glsl

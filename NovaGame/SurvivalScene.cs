@@ -9,73 +9,47 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace NovaGame
 {
-    public class SurvivalScene
+    public class SurvivalScene : Scene
     {
         //private List<Enemy> enemies;
-        private Transform sceneTransform;
+
         private SpriteRenderer background;
 
         private Qlock Clock;
         private Player player;
-        private Enemy enemy;
 
-        private List<NovaObject> pool;
+        public SurvivalScene() : base()
+        {
 
-        public SurvivalScene() {
-            sceneTransform = new Transform();
             background = new SpriteRenderer("assets/Screens/fondo.png", sceneTransform);
-            pool = new List<NovaObject>();
 
             player = new Player();
-            pool.Add(player);
+            addToObjectPool(player);
             
             Clock = new Qlock();
-            pool.Add(Clock);
+            addToObjectPool(Clock);
 
-            enemy = new Enemy(player.Transform);
-            pool.Add(enemy);
-            enemy = new Enemy(player.Transform);
-            pool.Add(enemy); enemy = new Enemy(player.Transform);
-            pool.Add(enemy); enemy = new Enemy(player.Transform);
-            pool.Add(enemy); enemy = new Enemy(player.Transform);
-            pool.Add(enemy); enemy = new Enemy(player.Transform);
-            pool.Add(enemy); enemy = new Enemy(player.Transform);
-            pool.Add(enemy); enemy = new Enemy(player.Transform);
-            pool.Add(enemy);
-
-            //text = new TextRenderer(sceneTransform, "0");
-
-            Init();
+            addToObjectPool(new Enemy(player.Transform));
+            addToObjectPool(new Enemy(player.Transform));
+            addToObjectPool(new Enemy(player.Transform));
+            addToObjectPool(new Enemy(player.Transform));
+            addToObjectPool(new Enemy(player.Transform));
+            addToObjectPool(new Enemy(player.Transform));
+            addToObjectPool(new Enemy(player.Transform));
         }
 
-        private void Init() 
+
+        public new void Update()
         {
+            base.Update();
         }
 
-
-        public void Update()
-        {
-            // Update player and other game objects
-            foreach (NovaObject obj in pool)
-            {
-                obj.Update();
-            }
-
-        }
-
-        public void Render()
+        public new void Render() 
         {
             // Render background and player
             background.Render();
-            foreach (NovaObject obj in pool)
-            {
-                obj.Render();
-            }
+            base.Render();
         }
-
-
-
-
        
     }
 }

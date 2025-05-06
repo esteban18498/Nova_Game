@@ -11,6 +11,8 @@ namespace NovaGame
 {
     public class Player : NovaObject
     {
+        private SurvivalScene _scene;
+        
         private RigidBody rb;
 
 
