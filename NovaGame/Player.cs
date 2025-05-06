@@ -37,7 +37,7 @@ namespace NovaGame
             //set { _rotationSpeed = value; }
         }
 
-        public Player() : base() 
+        public Player(Scene scene) : base(scene) 
         {
             _transform.SetScale(0.5f, 0.5f);
             rb = new RigidBody(_transform);

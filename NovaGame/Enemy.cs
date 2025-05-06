@@ -35,7 +35,7 @@ namespace NovaGame
             //set { _rotationSpeed = value; }
         }
 
-        public Enemy(Transform Target) : base()
+        public Enemy(Scene scene,Transform Target) : base(scene)
         {
 
             _transform.SetScale(0.5f, 0.5f);

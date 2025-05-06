@@ -15,7 +15,7 @@ namespace NovaGame
         private float time;
 
 
-        public Qlock()
+        public Qlock(Scene scene): base(scene)
         {
             _transform.SetPosition(NovaEngine.ScreenWidth / 3, NovaEngine.ScreenHeight / 3);
             time = 0;

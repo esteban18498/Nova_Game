@@ -23,19 +23,19 @@ namespace NovaGame
 
             background = new SpriteRenderer("assets/Screens/fondo.png", sceneTransform);
 
-            player = new Player();
+            player = new Player(this);
             addToObjectPool(player);
             
-            Clock = new Qlock();
+            Clock = new Qlock(this);
             addToObjectPool(Clock);
 
-            addToObjectPool(new Enemy(player.Transform));
-            addToObjectPool(new Enemy(player.Transform));
-            addToObjectPool(new Enemy(player.Transform));
-            addToObjectPool(new Enemy(player.Transform));
-            addToObjectPool(new Enemy(player.Transform));
-            addToObjectPool(new Enemy(player.Transform));
-            addToObjectPool(new Enemy(player.Transform));
+            addToObjectPool(new Enemy(this, player.Transform));
+            addToObjectPool(new Enemy(this, player.Transform));
+            addToObjectPool(new Enemy(this, player.Transform));
+            addToObjectPool(new Enemy(this, player.Transform));
+            addToObjectPool(new Enemy(this, player.Transform));
+            addToObjectPool(new Enemy(this, player.Transform));
+            addToObjectPool(new Enemy(this, player.Transform));
         }
 
 
