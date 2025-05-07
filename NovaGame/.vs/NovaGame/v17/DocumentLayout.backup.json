@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu763\\desktop\\repos\\nova_game\\novagame\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu763\\desktop\\repos\\nova_game\\novagame\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,10 +31,6 @@
       "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\components\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu763\\desktop\\repos\\nova_game\\novagame\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|c:\\users\\alu763\\desktop\\repos\\nova_game\\novagame\\engine\\novaengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4AC76F8-EC0B-F912-D0F2-DDE6A099582C}|NovaGame.csproj|solutionrelative:engine\\novaengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,12 +49,12 @@
       "VerticalTabListWidth": 158,
       "DocumentGroups": [
         {
-          "DockedWidth": 542,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 362,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CircleRenderer.cs",
               "DocumentMoniker": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Engine\\Components\\CircleRenderer.cs",
               "RelativeDocumentMoniker": "Engine\\Components\\CircleRenderer.cs",
@@ -62,12 +62,11 @@
               "RelativeToolTip": "Engine\\Components\\CircleRenderer.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAA1wDAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T22:39:17.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T22:39:17.26Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CircleShader.cs",
               "DocumentMoniker": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\CircleShader.cs",
               "RelativeDocumentMoniker": "Engine\\Shaders\\CircleShader\\CircleShader.cs",
@@ -80,20 +79,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwCcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwBgAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T22:14:12.481Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "fragmentShader.glsl",
               "DocumentMoniker": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Engine\\Shaders\\CircleShader\\fragmentShader.glsl",
               "RelativeDocumentMoniker": "Engine\\Shaders\\CircleShader\\fragmentShader.glsl",
@@ -101,20 +100,20 @@
               "RelativeToolTip": "Engine\\Shaders\\CircleShader\\fragmentShader.glsl",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-07T22:09:55.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T22:09:55.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
               "ToolTip": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T22:33:01.489Z"
+              "WhenOpened": "2025-05-06T22:33:01.489Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -131,12 +130,12 @@
           ]
         },
         {
-          "DockedWidth": 81,
+          "DockedWidth": 261,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Bullet.cs",
               "RelativeDocumentMoniker": "Bullet.cs",
@@ -161,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Transform.cs",
               "DocumentMoniker": "C:\\Users\\alu763\\Desktop\\Repos\\Nova_Game\\NovaGame\\Engine\\Components\\Transform.cs",
               "RelativeDocumentMoniker": "Engine\\Components\\Transform.cs",

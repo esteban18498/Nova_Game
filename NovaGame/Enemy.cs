@@ -18,6 +18,10 @@ namespace NovaGame
         private Transform target;
         private RigidBody rb;
 
+        private CircleRenderer shield;
+
+        private Vector4 shieldColor = new Vector4(255, 100, 100, 200);
+
         private float followDistance= 300;
 
 
@@ -49,8 +53,10 @@ namespace NovaGame
 
             _transform.SetPosition(x,y);
             rb = new RigidBody(_transform);
-            sprite = new SpriteRenderer(spritePath, _transform); 
-       
+            sprite = new SpriteRenderer(spritePath, _transform);
+
+            shield = new CircleRenderer(_transform, sprite.Height * 0.6f, 5, shieldColor);
+
         }
 
         public override void Update() {
@@ -70,18 +76,19 @@ namespace NovaGame
                 rb.AddLocalForce(new Vector2(0, -1) * _speed);
 
             }
-            
 
-
+            rb.Update();
         }
+
         public override void Render()
         {
             sprite.Render();
-            rb.Update();
+            shield.Render();
         }
 
         public override void Clean() {
             sprite.Clean();
+            shield.Clean();
         }
 
     }
