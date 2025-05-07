@@ -249,8 +249,8 @@ namespace NovaGame.Engine
         public enum MouseButton
         {
             LEFT = 1,
-            RIGHT = 2,
-            MIDDLE = 3
+            RIGHT = 3,
+            MIDDLE = 2
         }
         public class MouseCursor
         {

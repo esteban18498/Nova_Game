@@ -13,12 +13,14 @@ namespace NovaGame.Engine
         protected Transform _transform;
         public Transform Transform => _transform;
 
-        protected Scene _scene;
+        protected Scene _containerScene;
+        public Scene ContainerScene => _containerScene;
 
         public NovaObject(Scene scene)
         {
             _transform = new Transform();
-            _scene = scene;
+            _containerScene = scene;
+            scene.addToObjectPool(this);
         }
 
         public abstract void Update();

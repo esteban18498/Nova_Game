@@ -24,17 +24,17 @@ namespace NovaGame.Engine
 
         public void Update()
         {
-            foreach (NovaObject obj in pool)
+            for (int i = 0; i < pool.Count ;i++)
             {
-                obj.Update();
+                pool[i].Update();
             }
         }
 
         public void Render()
         {
-            foreach (NovaObject obj in pool)
+            for (int i = 0; i < pool.Count; i++)
             {
-                obj.Render();
+                pool[i].Render();
             }
         }
     }

@@ -11,8 +11,7 @@ namespace NovaGame
 {
     public class Player : NovaObject
     {
-        private SurvivalScene _scene;
-        
+       
         private RigidBody rb;
 
 
@@ -45,7 +44,7 @@ namespace NovaGame
             sprite = new SpriteRenderer(spritePath, _transform);
             animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
 
-            shield = new CircleRenderer(_transform, sprite.Height/2,5f);
+            shield = new CircleRenderer(_transform, sprite.Height/2,20f);
 
         }
 
@@ -68,4 +67,7 @@ namespace NovaGame
             animationController.Clean();
         }
     }
+
+
+
 }

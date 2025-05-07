@@ -55,6 +55,13 @@ namespace NovaGame.Engine.Components
             rotation = r;
         }
 
+        public void Copy(Transform transformToCopy)
+        {
+            position = transformToCopy.position;
+            scale = transformToCopy.scale;
+            rotation = transformToCopy.rotation;    
+        }
+
         public void SetScale(float x, float y)
         {
             scale = new Vector2(x, y);
@@ -117,10 +124,10 @@ namespace NovaGame.Engine.Components
         }
 
         public void MoveLeft(float distance) 
-            {   
+        {   
                 float deltaX = -MathF.Cos(rotation) * distance;
                 float deltaY = -MathF.Sin(rotation) * distance;
                 position += new Vector2(deltaX, deltaY);
-            }
+        }
     }
 }

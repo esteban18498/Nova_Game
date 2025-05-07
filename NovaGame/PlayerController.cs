@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Numerics;
 using NovaGame.Engine;
 using NovaGame.Engine.Components;
+using SDL2;
 
 namespace NovaGame
 {
@@ -37,6 +38,12 @@ namespace NovaGame
             if (NovaEngine.IsMouseButtonPressed(NovaEngine.MouseButton.LEFT))
             {
                 rb.AddLocalForce(new Vector2(0, 1) * player.Speed);
+            }
+
+            if (NovaEngine.IsMouseButtonPressed(NovaEngine.MouseButton.RIGHT))
+            {
+                new Bullet(player.ContainerScene, player.Transform);
+               
             }
 
             /*
