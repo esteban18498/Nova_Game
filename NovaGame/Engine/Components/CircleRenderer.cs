@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,16 +20,28 @@ namespace NovaGame.Engine.Components
         private float thickness;
         public float Thickness => thickness;
 
+        private Vector4 color;
+        public Vector4 Color => color;
+
         uint VAO, VBO, EBO;
         float quadWidth, quadHeight;
 
-        public CircleRenderer(Transform transform, float radius, float thickness)
+        public CircleRenderer(Transform transform, float radius, float thickness = 0 , Vector4? color = null)
         {
             this.transform = transform;
             this.radius = radius;
             this.thickness = thickness;
+            if (color != null )
+            {
+                this.color = (Vector4)color;
+            }
+            else
+            {
+                this .color = new Vector4 (255,255,255,255);
+            }
             SetupRenderQuad(radius);
         }
+
 
         public void Render()
         {
@@ -38,7 +52,7 @@ namespace NovaGame.Engine.Components
             shader.SetPosition(transform.Position.X, transform.Position.Y);
             shader.SetRadius(99- thickness);
             shader.SetThickness(thickness);
-            shader.SetCircleColor(255f,255f,255f,255f);
+            shader.SetCircleColor(color.X, color.Z, color.Y, color.W);
             shader.SetViewportSize(NovaEngine.ScreenWidth, NovaEngine.ScreenHeight);
 
 

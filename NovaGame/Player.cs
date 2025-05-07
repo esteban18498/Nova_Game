@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using NovaGame.Engine;
@@ -21,6 +22,7 @@ namespace NovaGame
         private AnimationController animationController;
 
         private CircleRenderer shield;
+        private Vector4 shieldColor = new Vector4(100, 255, 100, 200);
 
         private float _speed=500;
         public float Speed
@@ -44,7 +46,7 @@ namespace NovaGame
             sprite = new SpriteRenderer(spritePath, _transform);
             animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
 
-            shield = new CircleRenderer(_transform, sprite.Height/2,20f);
+            shield = new CircleRenderer(_transform, sprite.Height* 0.6f, 5, shieldColor);
 
         }
 

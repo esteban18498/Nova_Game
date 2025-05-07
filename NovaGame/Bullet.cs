@@ -13,12 +13,12 @@ namespace NovaGame
 
         private CircleRenderer circleRenderer;
         private float speed=100f;
-        private float size = 50f;
+        private float size = 10;
 
         public Bullet(Scene scene, Transform Caster) : base(scene) 
         {
             _transform.Copy(Caster); 
-            circleRenderer = new CircleRenderer(_transform, size/2, 40);
+            circleRenderer = new CircleRenderer(_transform, size/2, 0);
         }
 
         public override void Update()

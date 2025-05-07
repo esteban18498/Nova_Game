@@ -16,7 +16,7 @@ out vec4 FragColor;                      // Final color output
 void main()
 {
     // Calculate the distance from the fragment to the center of the circle
-    vec4 color=uColor;
+    vec4 color=uColor/255;
     
     vec2 reMap;
     reMap.x = abs( (2*TexCoord.x ) - 1) ;  // -1 to 1 (left to right)
@@ -26,22 +26,19 @@ void main()
     vec4 reMapColor = vec4(reMap.x, reMap.y, 0, 255); // Default color
     float glow =1;
     
+    float innerDistance=0;
+    float alpha=0;
+
     float outerDistance = (length(reMap)-uRadius/100);
-    float innerDistance = abs(outerDistance) - uThickness/100;
-    float alpha =  innerDistance / (fwidth(outerDistance)*glow);
-    color.w=1-(alpha+innerDistance );
-    
-    /*
-    // If the distance is less than or equal to the radius, render the circle
-    if (distance <= uRadius  && distance >= uRadius-uThickness)
-    {
-        FragColor = color;
+    if(uThickness!=0){
+        innerDistance = abs(outerDistance) - uThickness/100;
+        alpha =  innerDistance / (fwidth(outerDistance)*glow);
+    }else{
+        alpha = alpha =  outerDistance / (fwidth(outerDistance)*glow);
     }
-    else
-    {
-        //FragColor = vec4(255, 0.0, 0.0, 255); // Red
-        discard; // Discard the fragment
-    }*/
+
+    color.w*=1-(alpha+innerDistance );
+    
 
     FragColor = color; // Set the fragment color
     
