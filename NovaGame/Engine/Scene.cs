@@ -24,6 +24,23 @@ namespace NovaGame.Engine
 
         public void Update()
         {
+            for (int i = 0; i < pool.Count; i++)
+            {
+                if (pool[i].Collider != null)
+                {
+                    for (int j = i+1; j < pool.Count; j++)
+                    {
+                        if (pool[j].Collider != null)
+                        {
+                            if (i != j)
+                            {
+                                 pool[i].CheckColision(pool[j].Collider);
+                            }
+                        }
+                    }
+                }
+            }
+
             for (int i = 0; i < pool.Count ;i++)
             {
                 pool[i].Update();

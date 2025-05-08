@@ -16,6 +16,9 @@ namespace NovaGame.Engine
         protected Scene _containerScene;
         public Scene ContainerScene => _containerScene;
 
+        private CircleCollider? _collider;
+        public CircleCollider? Collider => _collider == null ? null: _collider;
+
         public NovaObject(Scene scene)
         {
             _transform = new Transform();
@@ -30,6 +33,13 @@ namespace NovaGame.Engine
 
         public abstract void Clean();
 
+        public void CheckColision(CircleCollider? other)
+        {
+            if (other == null)
+                return;
+
+            _collider?.checkColission(other);
+        }
 
     }
 }
