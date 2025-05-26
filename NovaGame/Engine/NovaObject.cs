@@ -16,7 +16,7 @@ namespace NovaGame.Engine
         protected Scene _containerScene;
         public Scene ContainerScene => _containerScene;
 
-        private CircleCollider? _collider;
+        protected CircleCollider? _collider;
         public CircleCollider? Collider => _collider == null ? null: _collider;
 
         public NovaObject(Scene scene)
@@ -37,8 +37,19 @@ namespace NovaGame.Engine
         {
             if (other == null)
                 return;
+            if (_collider == null)
+                return;
 
-            _collider?.checkColission(other);
+            if (_collider.checkColission(other))
+            {
+                OnColissionStay(other);
+            }
+        }
+
+        public virtual void OnColissionStay(CircleCollider other)
+        {
+            // Default implementation does nothing
+            // Override this method in derived classes to handle collision events
         }
 
     }

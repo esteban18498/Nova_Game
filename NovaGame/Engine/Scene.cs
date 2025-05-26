@@ -11,7 +11,7 @@ namespace NovaGame.Engine
     {
         protected Transform sceneTransform;
         private List<NovaObject> pool=new List<NovaObject>();
-
+        private List<NovaObject> removePoll = new List<NovaObject>();
 
         public Scene() {
             sceneTransform = new Transform();
@@ -28,7 +28,7 @@ namespace NovaGame.Engine
             {
                 if (pool[i].Collider != null)
                 {
-                    for (int j = i+1; j < pool.Count; j++)
+                    for (int j = 0; j < pool.Count; j++)
                     {
                         if (pool[j].Collider != null)
                         {
@@ -45,6 +45,11 @@ namespace NovaGame.Engine
             {
                 pool[i].Update();
             }
+
+            for (int i = 0; i < removePoll.Count; i++)
+            {
+                pool.Remove(removePoll[i]);
+            }
         }
 
         public void Render()
@@ -53,6 +58,11 @@ namespace NovaGame.Engine
             {
                 pool[i].Render();
             }
+        }
+
+        public void RemoveFromObjectPool(NovaObject obj)
+        {
+            removePoll.Add(obj);
         }
     }
 }

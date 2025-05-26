@@ -57,6 +57,8 @@ namespace NovaGame
 
             shield = new CircleRenderer(_transform, sprite.Height * 0.6f, 5, shieldColor);
 
+            _collider = new CircleCollider(_transform, sprite.Height * 0.6f, GameManager.enemyLayer, GameManager.playerLayer);
+            _collider.name = "enemy";
         }
 
         public override void Update() {
