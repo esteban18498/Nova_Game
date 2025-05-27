@@ -32,10 +32,10 @@ namespace NovaGame
 
         private SurvivalScene survivalScene;
 
-        public static readonly byte playerLayer = 0b10000000;
-        public static readonly byte playerBulletLayer = 0b01000000;
-        public static readonly byte enemyLayer = 0b00100000;
-        public static readonly byte enemyBulletLayer = 0b00010000;
+        public const byte PLAYER_LAYER = 0b10000000;
+        public const byte BULLET_LAYER = 0b01000000;
+        public const byte ENEMY_LAYER = 0b00100000;
+        //public static readonly byte enemyBulletLayer = 0b00010000;
 
         public static GameManager Instance
         {

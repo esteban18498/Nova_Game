@@ -33,7 +33,7 @@ namespace NovaGame.Engine
             return NormalizeAngle(result);
         }
 
-        private static float NormalizeAngle(float angle)
+        public static float NormalizeAngle(float angle)
         {
             while (angle < 0) angle += 2 * MathF.PI;
             while (angle >= 2 * MathF.PI) angle -= 2 * MathF.PI;

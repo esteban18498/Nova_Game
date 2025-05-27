@@ -8,36 +8,51 @@ using NovaGame.Engine.Components;
 using NovaGame.Engine;
 using System.Numerics;
 using SDL2;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace NovaGame
 {
-    public class Enemy : NovaObject
+    public class Enemy : NovaObject, IDamagable
     {
+        #region Components
         private string spritePath = "assets/enemy.png";
         private SpriteRenderer sprite;
-        private Transform target;
         private RigidBody rb;
 
         private CircleRenderer shield;
-
         private Vector4 shieldColor = new Vector4(255, 100, 100, 200);
+        #endregion
 
+        private Transform target;
+        private float shotTimer;
+
+        #region stats
+        private float _health = 100;
+        private float shotInterval = 2.0f; // Spawn every 2 seconds
         private float followDistance= 300;
-
-
         private float _speed = 100;
+        private float _rotationSpeed = 2.5f;
+        private float precision = MathF.PI / 16; // Precision for aiming PI/16 = 11.25 degrees 
+        #endregion
+
+        #region Getters/Setters
+        public float Health
+        {
+            get { return _health; }
+            //set { _health = value; }
+        }
         public float Speed
         {
             get { return _speed; }
             //set { _speed = value; }
         }
 
-        private float _rotationSpeed = 2.5f;
         public float RotationSpeed
         {
             get { return _rotationSpeed; }
             //set { _rotationSpeed = value; }
         }
+        #endregion
 
         public Enemy(Scene scene,Transform Target) : base(scene)
         {
@@ -53,11 +68,11 @@ namespace NovaGame
 
             _transform.SetPosition(x,y);
             rb = new RigidBody(_transform);
-            sprite = new SpriteRenderer(spritePath, _transform);
+            sprite = new SpriteRenderer(spritePath, _transform,  true );
 
             shield = new CircleRenderer(_transform, sprite.Height * 0.6f, 5, shieldColor);
 
-            _collider = new CircleCollider(_transform, sprite.Height * 0.6f, GameManager.enemyLayer, GameManager.playerLayer);
+            _collider = new CircleCollider(this, sprite.Height * 0.6f, GameManager.ENEMY_LAYER, GameManager.PLAYER_LAYER);
             _collider.name = "enemy";
         }
 
@@ -67,7 +82,7 @@ namespace NovaGame
             Vector2 targetPos = target.Position;
             //Vector2 direction = transform.Position - targetPos;
             Vector2 direction = targetPos - _transform.Position;
-            float angle = MathF.Atan2(direction.Y, direction.X) + MathF.PI / 2; //-----> + PI/2 = rotar90 grados el sprite. correccion de direccion
+            float angle = MathF.Atan2(direction.Y, direction.X) - MathF.PI / 2; //-----> + PI/2 = rotar90 grados el sprite. correccion de direccion
 
             // Actualizar la rotación del transform
             _transform.SetRotation(NovaMath.LerpAngle(_transform.Rotation, angle, Time.DeltaTime * _rotationSpeed));
@@ -75,11 +90,28 @@ namespace NovaGame
             if( followDistance < Vector2.Distance(_transform.Position, targetPos))
             {
                 //transform.MoveDown(Time.DeltaTime * _speed);
-                rb.AddLocalForce(new Vector2(0, -1) * _speed);
+                rb.AddLocalForce(new Vector2(0, 1) * _speed);
 
+            }
+            shotTimer += Time.DeltaTime;
+
+           if (NovaMath.NormalizeAngle(NovaMath.NormalizeAngle(_transform.Rotation) - NovaMath.NormalizeAngle(angle)) <precision) 
+            {
+                Shot();
             }
 
             rb.Update();
+        }
+
+
+
+        private void Shot()
+        {
+            if (shotTimer>= shotInterval)
+            {
+                Bullet bullet = new Bullet(this.ContainerScene, this.Transform, shieldColor, GameManager.PLAYER_LAYER);
+                shotTimer = 0; // Reset the timer
+            }
         }
 
         public override void Render()
@@ -93,5 +125,16 @@ namespace NovaGame
             shield.Clean();
         }
 
+
+        public void TakeDamage(float damage)
+        {
+            _health -= damage;
+            if (_health <= 0)
+            {
+                // Handle enemy death
+                Console.WriteLine("Enemy defeated!");
+                Destroy();
+            }
+        }
     }
 }

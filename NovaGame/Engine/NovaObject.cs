@@ -19,6 +19,14 @@ namespace NovaGame.Engine
         protected CircleCollider? _collider;
         public CircleCollider? Collider => _collider == null ? null: _collider;
 
+        private event Action<NovaObject>? onDestroy;
+
+        public event Action<NovaObject> OnDestroy
+        {
+            add { onDestroy += value; }
+            remove { onDestroy -= value; }
+        }
+
         public NovaObject(Scene scene)
         {
             _transform = new Transform();
@@ -33,6 +41,12 @@ namespace NovaGame.Engine
 
         public abstract void Clean();
 
+        public void Destroy()
+        {
+            onDestroy?.Invoke(this);
+            _containerScene.RemoveFromObjectPool(this);
+            Clean();
+        }
         public void CheckColision(CircleCollider? other)
         {
             if (other == null)

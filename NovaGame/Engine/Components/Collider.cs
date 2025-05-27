@@ -14,6 +14,9 @@ namespace NovaGame.Engine.Components
 
         public string name = "CircleCollider";
 
+        private NovaObject owner;
+        public NovaObject Owner => owner;
+
         private Transform transform;
         public Transform Transform => transform; 
         
@@ -29,9 +32,10 @@ namespace NovaGame.Engine.Components
         private byte layerMask;
         public byte LayerMask => layerMask;
 
-        public CircleCollider(Transform transform, float radius, byte layer =0b00000000, byte layerMask = 0b00000000)
+        public CircleCollider(NovaObject owner, float radius, byte layer =0b00000000, byte layerMask = 0b00000000)
         {
-            this.transform = transform;
+            this.owner = owner;
+            this.transform = owner.Transform;
             this.radius = radius;
             this.layer = layer;
             this.layerMask = layerMask;

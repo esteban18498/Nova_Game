@@ -31,10 +31,12 @@ namespace NovaGame.Engine.Components
         uint VAO, VBO, EBO;
         float quadWidth, quadHeight;
 
+        private bool flipVertical = false; // Default to no vertical flip
 
-        public SpriteRenderer(string spritePath, Transform transform)
+        public SpriteRenderer(string spritePath, Transform transform, bool flipVertical=false)
         {
             this.transform = transform;
+            this.flipVertical = flipVertical;
             textureID = LoadTexture(spritePath);
         }
 
@@ -126,6 +128,10 @@ namespace NovaGame.Engine.Components
             float imageAspect = (float)imageWidth / imageHeight;
             quadWidth = (float)imageWidth;  
             quadHeight = (float)imageHeight;
+            if (flipVertical)
+            {
+                quadHeight = -quadHeight; // Flip the height if needed
+            }
 
             float[] vertices = {
         // Positions        // Texture coords

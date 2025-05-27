@@ -16,15 +16,20 @@ namespace NovaGame
         private RigidBody rb;
         private Player player;
 
+        private float shotTimer=0;
+
         public PlayerController(Player player, Transform transform, RigidBody rb)
         {
             this.transform = transform;
             this.player = player;
             this.rb = rb;
+            shotTimer = player.ShotInterval;
         }
 
         public void Update()
         {
+
+            shotTimer += Time.DeltaTime;
             /* Controles de Mouse
              *      posision del mouse + LClick para avanzar
              */
@@ -42,7 +47,11 @@ namespace NovaGame
 
             if (NovaEngine.IsMouseButtonPressed(NovaEngine.MouseButton.RIGHT))
             {
-                new Bullet(player.ContainerScene, player.Transform);
+                if (shotTimer>=player.ShotInterval)
+                {
+                    new Bullet(player.ContainerScene, player.Transform);
+                    shotTimer = 0;
+                }
                
             }
 

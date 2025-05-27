@@ -17,6 +17,7 @@ namespace NovaGame
 
         private Qlock Clock;
         private Player player;
+        private EnemySpawner spawner;
 
         public SurvivalScene() : base()
         {
@@ -25,14 +26,8 @@ namespace NovaGame
 
             player = new Player(this);
             Clock = new Qlock(this);
+            spawner = new EnemySpawner(this, player);
 
-            new Enemy(this, player.Transform);
-            new Enemy(this, player.Transform);
-            new Enemy(this, player.Transform);
-            new Enemy(this, player.Transform);
-            new Enemy(this, player.Transform);
-            new Enemy(this, player.Transform);
-            new Enemy(this, player.Transform);
         }
 
 
@@ -43,7 +38,7 @@ namespace NovaGame
 
         public new void Render() 
         {
-            // Render background and player
+            // Render background and scene objects
             background.Render();
             base.Render();
         }
