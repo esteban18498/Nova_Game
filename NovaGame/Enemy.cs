@@ -60,13 +60,6 @@ namespace NovaGame
             _transform.SetScale(0.5f, 0.5f);
             target = Target;
 
-            Random rgen= new Random();
-
-            float x = rgen.Next(-NovaEngine.ScreenWidth / 3, NovaEngine.ScreenWidth / 3);
-            float y = rgen.Next(-NovaEngine.ScreenHeight / 3, NovaEngine.ScreenHeight / 3);
-            //_transform = new Transform(x, y);
-
-            _transform.SetPosition(x,y);
             rb = new RigidBody(_transform);
             sprite = new SpriteRenderer(spritePath, _transform,  true );
 
@@ -74,6 +67,38 @@ namespace NovaGame
 
             _collider = new CircleCollider(this, sprite.Height * 0.6f, GameManager.ENEMY_LAYER, GameManager.PLAYER_LAYER);
             _collider.name = "enemy";
+
+
+            float x = 0;
+            float y = 0;
+
+            Random rgen = new Random();
+            int spawnBoundarieTop = (NovaEngine.ScreenHeight  + sprite.Height)/2;
+            int spawnBoundarieBottom = (-NovaEngine.ScreenHeight  - sprite.Height )/2;
+            int spawnBoundarieLeft = (-NovaEngine.ScreenWidth  - sprite.Width)/ 2;
+            int spawnBoundarieRight = (NovaEngine.ScreenWidth  + sprite.Height)/ 2;
+
+            switch (rgen.Next(0, 3)) // Randomly choose a spawn side
+            {
+                case 0://top
+                    x = rgen.Next(spawnBoundarieLeft, spawnBoundarieRight);
+                    y = spawnBoundarieTop;
+                    break;
+                case 1://left
+                    x = spawnBoundarieLeft;
+                    y = rgen.Next(spawnBoundarieBottom, spawnBoundarieTop);
+                    break;
+                case 2://right
+                    x = spawnBoundarieRight;
+                    y = rgen.Next(spawnBoundarieBottom, spawnBoundarieTop);
+                    break;
+                case 3://bottom
+                    x = rgen.Next(spawnBoundarieLeft, spawnBoundarieRight);
+                    y = spawnBoundarieBottom;
+                    break;
+            }
+
+            _transform.SetPosition(x, y);
         }
 
         public override void Update() {

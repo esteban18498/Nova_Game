@@ -25,6 +25,7 @@ namespace NovaGame
             background = new SpriteRenderer("assets/Screens/fondo.png", sceneTransform);
 
             player = new Player(this);
+            player.OnDestroy += EndScene;
             Clock = new Qlock(this);
             spawner = new EnemySpawner(this, player);
 
@@ -33,7 +34,7 @@ namespace NovaGame
 
         public new void Update()
         {
-            base.Update();
+            base.Update();  
         }
 
         public new void Render() 
@@ -42,6 +43,10 @@ namespace NovaGame
             background.Render();
             base.Render();
         }
-       
+
+        public void EndScene(NovaObject player) { 
+            //GameManager.Instance.ChangeScene(new GameOverScene(player as Player, Clock.TimeElapsed, Clock.Score));
+
+        }
     }
 }
