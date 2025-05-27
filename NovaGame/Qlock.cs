@@ -40,5 +40,10 @@ namespace NovaGame
         {
 
         }
+
+        public void Reset()
+        {
+            time = 0;
+        }
     }
 }

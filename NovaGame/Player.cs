@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NovaGame.Engine;
 using NovaGame.Engine.Components;
+using SDL2;
 
 namespace NovaGame
 {
@@ -25,12 +26,25 @@ namespace NovaGame
         private Vector4 shieldColor = new Vector4(100, 255, 100, 200);
 
         #region stats
+        private float _maxHealth = 100;
+        private float _health;
         private float shotInterval = 0.5f; // 
         private float _speed=500;
         private float _rotationSpeed = 2.5f;
         #endregion
 
         #region Getters/Setters
+
+        public float MaxHealth
+        {
+            get { return _maxHealth; }
+        }
+
+        public float Health
+        {
+            get { return _health; }
+        }
+
         public float Speed
         {
             get { return _speed; }
@@ -61,10 +75,14 @@ namespace NovaGame
             shield = new CircleRenderer(_transform, sprite.Height* 0.6f, 5, shieldColor);
             _collider = new CircleCollider(this, sprite.Height * 0.6f, GameManager.PLAYER_LAYER, GameManager.ENEMY_LAYER);
             _collider.name = "enemy";
+
+            _health = _maxHealth;
         }
 
         public override void Update()
         {
+           // Console.WriteLine("player update");
+
             controller.Update();
             rb.Update();
             animationController.Update();
@@ -72,6 +90,8 @@ namespace NovaGame
 
         public override void Render()
         {
+           //Console.WriteLine("player render");
+
             sprite.Render();
             shield.Render();
         }
@@ -82,10 +102,23 @@ namespace NovaGame
             animationController.Clean();
         }
 
+        public void Reset()
+        {
+            //Console.WriteLine("player reset");
+
+            _health = _maxHealth;
+            _transform.SetPosition(0, 0);
+            sprite = new SpriteRenderer(spritePath, _transform);
+            animationController = new AnimationController(sprite, "assets/Animations/PlayerShip/Idle", 4, 0.5f);
+        }
+
         public void TakeDamage(float damage)
         {
-            // Implement damage logic here
-            Console.WriteLine($"Player took {damage} damage.");
+            _health-=damage;
+            if  (_health <= 0)
+            {
+                Destroy();
+            }
         }
     }
 

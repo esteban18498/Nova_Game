@@ -44,5 +44,15 @@ namespace NovaGame
         {
             // Cleanup logic if necessary
         }
+
+        public void Reset()
+        {
+            foreach (Enemy enemy in enemies) {
+                _containerScene.RemoveFromObjectPool(enemy);
+            }
+            enemies.Clear();
+
+            spawnTimer = 0f;
+        }
     }
 }

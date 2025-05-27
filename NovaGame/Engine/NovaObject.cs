@@ -45,7 +45,7 @@ namespace NovaGame.Engine
         {
             onDestroy?.Invoke(this);
             _containerScene.RemoveFromObjectPool(this);
-            Clean();
+            Clean();// this can cause problems with object pooling in the future
         }
         public void CheckColision(CircleCollider? other)
         {

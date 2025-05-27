@@ -50,6 +50,7 @@ namespace NovaGame.Engine
             {
                 pool.Remove(removePoll[i]);
             }
+            removePoll.Clear();
         }
 
         public void Render()
@@ -63,6 +64,12 @@ namespace NovaGame.Engine
         public void RemoveFromObjectPool(NovaObject obj)
         {
             removePoll.Add(obj);
+        }
+
+        public void CleanPool()
+        {
+            removePoll.Clear();
+            pool.Clear();
         }
     }
 }

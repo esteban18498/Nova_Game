@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using NovaGame.Engine;
@@ -12,14 +13,35 @@ namespace NovaGame
     {
         private SpriteRenderer background;
 
-        private TextRenderer gameOverText;
+        private TextBox gameOverText;
+        private TextBox scoreText;
+
+        private TextBox resetText;
 
         public LoseScene() : base()
         {
             background = new SpriteRenderer("assets/Screens/fondo.png", sceneTransform);
-            gameOverText = new TextRenderer(sceneTransform, "assets/Screens/gameover.png" );
-            /*gameOverText.Transform.SetPosition(0, 0);
-            gameOverText.Transform.SetScale(0.5f, 0.5f);*/
+
+            Vector2 TitlePosition = new Vector2(0, NovaEngine.ScreenHeight / 3);
+            gameOverText = new TextBox(this, "You Lose", TitlePosition);
+
+            Vector2 scorePosition = new Vector2(0,0);
+            scoreText = new TextBox(this, "Score:", scorePosition);
+
+
+            Vector2 resetTextPos = new Vector2(0, -NovaEngine.ScreenHeight / 3);
+            scoreText = new TextBox(this, "Space to reset", resetTextPos);
+
+        }
+
+        public new void Update()
+        {
+            base.Update();
+            if (NovaEngine.IsKeyPressed(NovaEngine.KEY_ESP))
+            {
+                
+                GameManager.Instance.ChangeGameStatus(gameStatus.game);
+            }
         }
     }
 }

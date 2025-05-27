@@ -44,9 +44,23 @@ namespace NovaGame
             base.Render();
         }
 
-        public void EndScene(NovaObject player) { 
+        public void EndScene(NovaObject player) {
             //GameManager.Instance.ChangeScene(new GameOverScene(player as Player, Clock.TimeElapsed, Clock.Score));
+            GameManager.Instance.ChangeGameStatus(gameStatus.lose);
 
+        }
+
+        public void Reset()
+        {
+            CleanPool();
+
+            addToObjectPool(player);
+            addToObjectPool(Clock);
+            addToObjectPool(spawner);
+
+            player.Reset();
+            Clock.Reset();
+            spawner.Reset();
         }
     }
 }

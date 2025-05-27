@@ -100,7 +100,7 @@ namespace NovaGame.Engine.Components
                 NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MIN_FILTER, (int)NovaGL.GL_LINEAR);
                 NovaGL.glTexParameteri(NovaGL.GL_TEXTURE_2D, NovaGL.GL_TEXTURE_MAG_FILTER, (int)NovaGL.GL_LINEAR);
 
-                SetupRenderQuad(textWidth, textHeight);
+                SetupRenderQuad(texWidth, texHeight);
                 isLoaded = true;
             }
             finally

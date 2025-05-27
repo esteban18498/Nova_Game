@@ -32,6 +32,8 @@ namespace NovaGame.Engine.Components
         private byte layerMask;
         public byte LayerMask => layerMask;
 
+
+
         public CircleCollider(NovaObject owner, float radius, byte layer =0b00000000, byte layerMask = 0b00000000)
         {
             this.owner = owner;
