@@ -15,6 +15,7 @@ namespace NovaGame
         private Transform transform;
         private RigidBody rb;
         private Player player;
+        private IinputController input;
 
         private float shotTimer=0;
 
@@ -38,6 +39,7 @@ namespace NovaGame
             mousePos = NovaEngine.ScreenToWorld(mousePos);
             Vector2 direction = mousePos - transform.Position;
             float angle = MathF.Atan2(direction.Y, direction.X) - MathF.PI / 2;
+            
             transform.SetRotation(NovaMath.LerpAngle(transform.Rotation, angle, Time.DeltaTime * player.RotationSpeed));
 
             if (NovaEngine.IsMouseButtonPressed(NovaEngine.MouseButton.LEFT))
