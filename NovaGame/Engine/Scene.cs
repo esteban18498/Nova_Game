@@ -26,11 +26,11 @@ namespace NovaGame.Engine
         {
             for (int i = 0; i < pool.Count; i++)
             {
-                if (pool[i].Collider != null)
+                if (pool[i].Collider != null && pool[i].IsActive)
                 {
                     for (int j = 0; j < pool.Count; j++)
                     {
-                        if (pool[j].Collider != null)
+                        if (pool[j].Collider != null && pool[i].IsActive)
                         {
                             if (i != j)
                             {
@@ -43,7 +43,10 @@ namespace NovaGame.Engine
 
             for (int i = 0; i < pool.Count ;i++)
             {
-                pool[i].Update();
+                if (pool[i].IsActive)
+                {
+                    pool[i].Update();
+                }
             }
 
             for (int i = 0; i < removePoll.Count; i++)
@@ -57,7 +60,10 @@ namespace NovaGame.Engine
         {
             for (int i = 0; i < pool.Count; i++)
             {
-                pool[i].Render();
+                if (pool[i].IsActive)
+                {
+                    pool[i].Render();
+                }
             }
         }
 

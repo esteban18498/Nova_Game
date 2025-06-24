@@ -18,7 +18,7 @@ namespace NovaGame
     public class GameManager
     {
         private static GameManager instance;
-        private gameStatus gameStage = gameStatus.lose;    // 0-Menu     1-Game    2-Lose
+        private gameStatus gameStage = gameStatus.menu;    // 0-Menu     1-Game    2-Lose
 
         private SpriteRenderer mainMenuScreen; //= Engine.LoadImage("assets/MainMenu.png");
         private Transform screenTransform;

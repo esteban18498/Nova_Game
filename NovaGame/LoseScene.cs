@@ -26,7 +26,7 @@ namespace NovaGame
             gameOverText = new TextBox(this, "You Lose", TitlePosition);
 
             Vector2 scorePosition = new Vector2(0,0);
-            scoreText = new TextBox(this, "Score:", scorePosition);
+            scoreText = new TextBox(this, "Score: u're the best", scorePosition);
 
 
             Vector2 resetTextPos = new Vector2(0, -NovaEngine.ScreenHeight / 3);

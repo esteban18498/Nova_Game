@@ -50,6 +50,8 @@ namespace NovaGame.Engine.Components
             SpriteShader shader = NovaGL.SpriteShader;
             shader.Use();
 
+            
+
             shader.SetRotation(transform.Rotation );
             shader.SetPosition(transform.Position.X, transform.Position.Y);
             shader.SetScale(transform.Scale.X, transform.Scale.Y); // Default scale

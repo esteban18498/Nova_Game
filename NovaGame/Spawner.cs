@@ -11,27 +11,43 @@ namespace NovaGame
     {
         private Player player;
         private float spawnTimer;
-        private float spawnInterval = 0.0f; // Spawn every 2 seconds
-        private int maxEnemies = 1; // Maximum number of enemies at a time
+        private float spawnInterval = 2.0f; // Spawn every 2 seconds
+        private int maxEnemies = 3; // Maximum number of enemies at a time
 
-        private List<Enemy> enemies = new List<Enemy>();
+        private List<Enemy> activeEnemies = new List<Enemy>();
+        private List<Enemy> inactiveEnemies = new List<Enemy>();
 
         public EnemySpawner(Scene scene, Player player) : base(scene)
         {
             this.player = player;
-            spawnTimer = 0f;
+            spawnTimer = spawnInterval;
         }
         public override void Update()
         {
             spawnTimer += Time.DeltaTime;
-            if (spawnTimer >= spawnInterval && enemies.Count < maxEnemies)
+            if (spawnTimer >= spawnInterval && activeEnemies.Count < maxEnemies)
             {
-                Enemy newEnemy = new Enemy(ContainerScene, player.Transform);
-                enemies.Add(newEnemy);
-                newEnemy.OnDestroy += (enemy) =>
+                Enemy newEnemy;
+
+                if (inactiveEnemies.Count > 0)
                 {
-                    enemies.Remove(enemy as Enemy);
-                };
+                    newEnemy = inactiveEnemies[0];
+                    inactiveEnemies.RemoveAt(0);
+                    newEnemy.ResetEnemy();
+                }
+                else
+                {
+                    newEnemy = new Enemy(ContainerScene, player.Transform);
+                    newEnemy.OnDeactivate += (enemy) =>
+                    {
+                        activeEnemies.Remove(enemy as Enemy);
+                        inactiveEnemies.Add(enemy as Enemy);
+                    };
+                }
+
+
+                activeEnemies.Add(newEnemy);
+
 
                 spawnTimer = 0f;
             }
@@ -47,10 +63,10 @@ namespace NovaGame
 
         public void Reset()
         {
-            foreach (Enemy enemy in enemies) {
+            foreach (Enemy enemy in activeEnemies) {
                 _containerScene.RemoveFromObjectPool(enemy);
             }
-            enemies.Clear();
+            activeEnemies.Clear();
 
             spawnTimer = 0f;
         }

@@ -16,8 +16,8 @@ namespace NovaGame.Engine
         protected Scene _containerScene;
         public Scene ContainerScene => _containerScene;
 
-        protected CircleCollider? _collider;
-        public CircleCollider? Collider => _collider == null ? null: _collider;
+        protected ICollidable? _collider;
+        public ICollidable? Collider => _collider == null ? null: _collider;
 
         private event Action<NovaObject>? onDestroy;
 
@@ -25,6 +25,32 @@ namespace NovaGame.Engine
         {
             add { onDestroy += value; }
             remove { onDestroy -= value; }
+        }
+
+        private bool isActive = true;
+        public bool IsActive
+        {
+            get { return isActive; }
+            set { 
+                if (value == false) onDeactivate?.Invoke(this);
+                if (value == true) onActivate?.Invoke(this);
+                isActive = value; 
+            }
+        }
+
+        private event Action<NovaObject>? onActivate;
+        public event Action<NovaObject> OnActivate
+        {
+            add { onActivate += value; }
+            remove { onActivate -= value; }
+        }
+
+
+        private event Action<NovaObject>? onDeactivate;
+        public event Action<NovaObject> OnDeactivate
+        {
+            add { onDeactivate += value; }
+            remove { onDeactivate -= value; }
         }
 
         public NovaObject(Scene scene)
@@ -47,20 +73,20 @@ namespace NovaGame.Engine
             _containerScene.RemoveFromObjectPool(this);
             Clean();// this can cause problems with object pooling in the future
         }
-        public void CheckColision(CircleCollider? other)
+        public void CheckColision(ICollidable? other)
         {
             if (other == null)
                 return;
             if (_collider == null)
                 return;
 
-            if (_collider.checkColission(other))
+            if (_collider.CheckCollision(other))
             {
                 OnColissionStay(other);
             }
         }
 
-        public virtual void OnColissionStay(CircleCollider other)
+        public virtual void OnColissionStay(ICollidable other)
         {
             // Default implementation does nothing
             // Override this method in derived classes to handle collision events

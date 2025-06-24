@@ -9,10 +9,28 @@ using System.Threading.Tasks;
 namespace NovaGame.Engine.Components
 {
 
-    public class CircleCollider
+    public interface ICollidable
+    {
+        bool CheckCollision(ICollidable? other);
+        byte Layer { get; }
+        byte LayerMask { get; }
+
+        NovaObject Owner { get; }
+
+        string Name { get; set; }
+    }
+
+
+    public class CircleCollider : ICollidable
     {
 
-        public string name = "CircleCollider";
+        private string name = "CircleCollider";
+
+        public string Name
+        {
+            get => name;
+            set => name = value;
+        }
 
         private NovaObject owner;
         public NovaObject Owner => owner;
@@ -43,13 +61,12 @@ namespace NovaGame.Engine.Components
             this.layerMask = layerMask;
         }
 
-        public bool checkColission(CircleCollider other) {
+        public bool CheckCollision(ICollidable? Iother) {
+
+            CircleCollider other = Iother as CircleCollider;
 
             int c = other.Layer & this.layerMask;
-         // Console.WriteLine("Checking colission between: " + this.name + " and " + other.name);
-         // Console.WriteLine(Convert.ToString(this.layerMask, toBase: 2));
-         // Console.WriteLine(Convert.ToString(other.Layer, toBase: 2));
-         // Console.WriteLine(Convert.ToString(c, toBase: 2));
+
             if ((other.Layer & this.layerMask) ==0)
             {
                 return false;

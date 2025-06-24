@@ -70,7 +70,7 @@ public Vector4 BulletColor
 
             _collideWith = CollideWith;
             _collider = new CircleCollider(this, _size / 2, GameManager.BULLET_LAYER, _collideWith);
-            _collider.name = "bullet";
+            _collider.Name = "bullet";
         }
 
         public override void Update()
@@ -96,7 +96,7 @@ public Vector4 BulletColor
             circleRenderer.Clean();
         }
 
-        public override void OnColissionStay(CircleCollider other)
+        public override void OnColissionStay(ICollidable other)
         {
             // Handle collision with other objects
             // For example, you might want to destroy the bullet or apply damage

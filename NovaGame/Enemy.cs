@@ -27,7 +27,8 @@ namespace NovaGame
         private float shotTimer;
 
         #region stats
-        private float _health = 100;
+        private float _max_health = 100;
+        private float _health;
         private float shotInterval = 2.0f; // Spawn every 2 seconds
         private float followDistance= 300;
         private float _speed = 100;
@@ -66,39 +67,13 @@ namespace NovaGame
             shield = new CircleRenderer(_transform, sprite.Height * 0.6f, 5, shieldColor);
 
             _collider = new CircleCollider(this, sprite.Height * 0.6f, GameManager.ENEMY_LAYER, GameManager.PLAYER_LAYER);
-            _collider.name = "enemy";
+            _collider.Name = "enemy";
+
+            _health = _max_health;
 
 
-            float x = 0;
-            float y = 0;
 
-            Random rgen = new Random();
-            int spawnBoundarieTop = (NovaEngine.ScreenHeight  + sprite.Height)/2;
-            int spawnBoundarieBottom = (-NovaEngine.ScreenHeight  - sprite.Height )/2;
-            int spawnBoundarieLeft = (-NovaEngine.ScreenWidth  - sprite.Width)/ 2;
-            int spawnBoundarieRight = (NovaEngine.ScreenWidth  + sprite.Height)/ 2;
-
-            switch (rgen.Next(0, 3)) // Randomly choose a spawn side
-            {
-                case 0://top
-                    x = rgen.Next(spawnBoundarieLeft, spawnBoundarieRight);
-                    y = spawnBoundarieTop;
-                    break;
-                case 1://left
-                    x = spawnBoundarieLeft;
-                    y = rgen.Next(spawnBoundarieBottom, spawnBoundarieTop);
-                    break;
-                case 2://right
-                    x = spawnBoundarieRight;
-                    y = rgen.Next(spawnBoundarieBottom, spawnBoundarieTop);
-                    break;
-                case 3://bottom
-                    x = rgen.Next(spawnBoundarieLeft, spawnBoundarieRight);
-                    y = spawnBoundarieBottom;
-                    break;
-            }
-
-            _transform.SetPosition(x, y);
+            SetSpawnPoint();
         }
 
         public override void Update() {
@@ -128,7 +103,36 @@ namespace NovaGame
             rb.Update();
         }
 
-
+        private void SetSpawnPoint()
+        {
+            float x = 0;
+            float y = 0;
+            Random rgen = new Random();
+            int spawnBoundarieTop = (NovaEngine.ScreenHeight + sprite.Height) / 2;
+            int spawnBoundarieBottom = (-NovaEngine.ScreenHeight - sprite.Height) / 2;
+            int spawnBoundarieLeft = (-NovaEngine.ScreenWidth - sprite.Width) / 2;
+            int spawnBoundarieRight = (NovaEngine.ScreenWidth + sprite.Height) / 2;
+            switch (rgen.Next(0, 3)) // Randomly choose a spawn side
+            {
+                case 0://top
+                    x = rgen.Next(spawnBoundarieLeft, spawnBoundarieRight);
+                    y = spawnBoundarieTop;
+                    break;
+                case 1://left
+                    x = spawnBoundarieLeft;
+                    y = rgen.Next(spawnBoundarieBottom, spawnBoundarieTop);
+                    break;
+                case 2://right
+                    x = spawnBoundarieRight;
+                    y = rgen.Next(spawnBoundarieBottom, spawnBoundarieTop);
+                    break;
+                case 3://bottom
+                    x = rgen.Next(spawnBoundarieLeft, spawnBoundarieRight);
+                    y = spawnBoundarieBottom;
+                    break;
+            }
+            _transform.SetPosition(x, y);
+        }
 
         private void Shot()
         {
@@ -157,9 +161,15 @@ namespace NovaGame
             if (_health <= 0)
             {
                 // Handle enemy death
-                Console.WriteLine("Enemy defeated!");
-                Destroy();
+                IsActive = false;
             }
+        }
+
+        public void ResetEnemy()
+        {
+            this.IsActive = true;
+            _health = _max_health;
+            SetSpawnPoint();
         }
     }
 }
