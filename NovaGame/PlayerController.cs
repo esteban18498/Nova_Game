@@ -25,29 +25,23 @@ namespace NovaGame
             this.player = player;
             this.rb = rb;
             shotTimer = player.ShotInterval;
+            this.input= new MouseInputController(this.transform);
         }
 
         public void Update()
         {
 
             shotTimer += Time.DeltaTime;
-            /* Controles de Mouse
-             *      posision del mouse + LClick para avanzar
-             */
 
-            Vector2 mousePos = NovaEngine.GetMousePosition();
-            mousePos = NovaEngine.ScreenToWorld(mousePos);
-            Vector2 direction = mousePos - transform.Position;
-            float angle = MathF.Atan2(direction.Y, direction.X) - MathF.PI / 2;
-            
+            float angle = input.GetRotationAngle(); 
             transform.SetRotation(NovaMath.LerpAngle(transform.Rotation, angle, Time.DeltaTime * player.RotationSpeed));
 
-            if (NovaEngine.IsMouseButtonPressed(NovaEngine.MouseButton.LEFT))
+            if (input.IsFowardPress())
             {
                 rb.AddLocalForce(new Vector2(0, 1) * player.Speed);
             }
 
-            if (NovaEngine.IsMouseButtonPressed(NovaEngine.MouseButton.RIGHT))
+            if (input.IsShotPress())
             {
                 if (shotTimer>=player.ShotInterval)
                 {
