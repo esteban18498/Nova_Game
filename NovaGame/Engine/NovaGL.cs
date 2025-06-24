@@ -311,7 +311,14 @@ namespace NovaGame.Engine
         }
 
 
-        public static void CheckOpenGLVersion()
+        public static void LoadVersionFunctions(Func<string, IntPtr> getProcAddress)
+        {
+            _glGetString = Marshal.GetDelegateForFunctionPointer<glGetStringDelegate>(getProcAddress("glGetString"));
+            _glGetIntegerv = Marshal.GetDelegateForFunctionPointer<glGetIntegervDelegate>(getProcAddress("glGetIntegerv"));
+        }
+
+
+        public static int CheckOpenGLVersion()
         {
             string vendor = glGetString(GL_VENDOR);
             string renderer = glGetString(GL_RENDERER);
@@ -329,6 +336,7 @@ namespace NovaGame.Engine
             {
                 throw new Exception($"Unsupported OpenGL version {major}.{minor}. Need at least 3.3");
             }
+            return major * 100 + minor; // Return version as an integer (e.g., 330 for 3.3)
         }
 
         //Shaders
